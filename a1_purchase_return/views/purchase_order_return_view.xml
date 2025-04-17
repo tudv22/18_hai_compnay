@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="a1_purchase_order_re_return_form" model="ir.ui.view">
+        <field name="name">a1.purchase.order.return.return.form</field>
+        <field name="model">purchase.order.return</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="mode">primary</field>
+        <field eval="7" name="priority"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="x_origin_purchase_id" options="{'no_create': True}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="purchase_order_return_tree_inherit_a1_purchase_return" model="ir.ui.view">
+        <field name="name">purchase.order.return.tree.inherit.purchase.return</field>
+        <field name="model">purchase.order.return</field>
+        <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+        <field name="mode">primary</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="x_origin_purchase_id" options="{'no_create': True}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="a1_purchase_order_return_form_action" model="ir.actions.act_window">
+        <field name="name">Purchase Return Orders</field>
+        <field name="res_model">purchase.order.return</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'list'}),
+                  (0, 0, {'view_mode': 'form'})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No purchase return order found. Let's create one!
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="a1_purchase_order_return_form_action"
+              id="menu_a1_purchase_order_return_form_action"
+              parent="purchase.menu_procurement_management"
+              sequence="10"/>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_stock_picking_form_view_inherit" model="ir.ui.view">
+        <field name="name">sale.stock.picking.inherit.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_reception_report']" position="before">
+                <button name="action_view_sale_return"
+                        type="object" class="oe_stat_button"
+                        icon="fa-file"
+                        invisible="x_count_sale_order_return == 0">
+                    <field name="x_count_sale_order_return" widget="statinfo" string="Sale returns"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

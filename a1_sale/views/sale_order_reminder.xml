@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="sale_order_tree_a1_inherit_reminder" model="ir.ui.view">
+            <field name="name">sale.order.tree.form.a1.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//list/field[@name='partner_id']" position="after">
+                    <field name="x_mobile"/>
+                </xpath>
+                <xpath expr="//list" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
+                <xpath expr="//field[@name='invoice_status']" position="after">
+                    <field name="delivery_status" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_sales_order_filter_inherit" model="ir.ui.view">
+            <field name="name">sale.order.list.select.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="name">sale.order.list.select.inherit</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/field[@name='name']" position="before">
+                    <field name="x_mobile"/>
+                </xpath>
+                <xpath expr="//search/filter[@name='my_sale_orders_filter']" position="after">
+                    <filter string="Invoiced" domain="[('invoice_status', '=', 'invoiced')]" name="sale_order_invoiced"/>
+                    <filter string="To Invoice" domain="[('invoice_status', '=', 'to invoice')]" name="sale_order_to_invoice"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_deposited_wholesale_reminder" model="ir.actions.act_window">
+            <field name="name">Deposited wholesale</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">list,search,form,graph,pivot</field>
+            <field name="domain">[
+                ('state', '=', 'sale'),
+                ('x_payment_status', '!=', 'full'),
+                ('x_type', '=', 'sale')
+                ]
+            </field>
+            <field name="context">{}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                        (0, 0, {'view_mode': 'list', 'view_id': ref('a1_sale.sale_order_tree_a1_inherit_reminder')})]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No deposited wholesale were made yet!
+                </p>
+            </field>
+        </record>
+
+        <record id="sale.action_orders_to_invoice" model="ir.actions.act_window">
+            <field name="domain">[('invoice_status','=','to invoice'), ('state', '=', 'sale'), ('x_type', '=', 'sale')]</field>
+        </record>
+
+        <record id="action_undeliveried_order_reminder" model="ir.actions.act_window">
+            <field name="name">Undeliveried Order</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">list,search,form,graph,pivot</field>
+            <field name="domain">[('delivery_status', '!=', 'full'), ('x_type', '=', 'sale'),
+                ('state', '=', 'sale'), ('x_scheduled_date', '>=', context_today())]
+            </field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                        (0, 0, {'view_mode': 'list', 'view_id': ref('a1_sale.sale_order_tree_a1_inherit_reminder')})]"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Not any undeliveried Order were made yet!
+                </p>
+            </field>
+        </record>
+
+        <record id="action_outdate_undeliveried_order_reminder" model="ir.actions.act_window">
+            <field name="name">Outdate Undeliveried Order</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">list,search,form,graph,pivot</field>
+            <field name="domain">[('delivery_status', '!=', 'full'), ('x_type', '=', 'sale'),
+                ('state', '=', 'sale'), ('x_scheduled_date', '&lt;', context_today())]
+            </field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                        (0, 0, {'view_mode': 'list', 'view_id': ref('a1_sale.sale_order_tree_a1_inherit_reminder')})]"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Not any undeliveried Order were made yet!
+                </p>
+            </field>
+        </record>
+
+        <record id="action_orders_return_to_invoice" model="ir.actions.act_window">
+            <field name="name">Orders Return to Invoice</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">list,form,calendar,graph,pivot,kanban,activity</field>
+            <field name="context">{'create': False}</field>
+            <field name="domain">[('invoice_status','=','to invoice'), ('state', '=', 'sale'), ('x_type', '=', 'return')]</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                No orders to invoice found
+                </p><p>
+                You can select all orders and invoice them in batch,<br/>
+                or check every order and invoice them one by one.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_undeliveried_order_return_reminder" model="ir.actions.act_window">
+            <field name="name">Undeliveried Return Order</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">list,search,form,graph,pivot</field>
+            <field name="domain">[('delivery_status', '!=', 'full'), ('x_type', '=', 'return'),
+                ('state', '=', 'sale'), ('x_scheduled_date', '>=', context_today())]
+            </field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                        (0, 0, {'view_mode': 'list', 'view_id': ref('a1_sale.sale_order_tree_a1_inherit_reminder')})]"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Not any Undeliveried Return Order were made yet!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_sale_order_reminder_manager"
+                  name="Reminders"
+                  parent="sale.sale_menu_root"
+                  sequence="20"/>
+
+        <menuitem id="menu_deposited_wholesale"
+                  parent="a1_sale.menu_sale_order_reminder_manager"
+                  action="action_deposited_wholesale_reminder"
+                  sequence="5"/>
+        <menuitem id="menu_reminder_order_to_invoice"
+                  name="Order to invoice"
+                  parent="a1_sale.menu_sale_order_reminder_manager"
+                  action="sale.action_orders_to_invoice"
+                  sequence="9"/>
+        <menuitem id="menu_reminder_order_to_upsell"
+                  name="Order to upsell"
+                  parent="a1_sale.menu_sale_order_reminder_manager"
+                  action="sale.action_orders_upselling"
+                  sequence="11"/>
+        <menuitem id="menu_reminder_undeliveried_order"
+                  parent="a1_sale.menu_sale_order_reminder_manager"
+                  action="action_undeliveried_order_reminder"
+                  sequence="13"/>
+        <menuitem id="menu_reminder_outdate_undeliveried_order"
+                  parent="a1_sale.menu_sale_order_reminder_manager"
+                  action="action_outdate_undeliveried_order_reminder"
+                  sequence="15"/>
+        <menuitem id="menu_reminder_order_return_to_invoice"
+                  parent="a1_sale.menu_sale_order_reminder_manager"
+                  action="action_orders_return_to_invoice"
+                  sequence="17"/>
+        <menuitem id="menu_reminder_undeliveried_return_order"
+                  parent="a1_sale.menu_sale_order_reminder_manager"
+                  action="action_undeliveried_order_return_reminder"
+                  sequence="19"/>
+
+        <menuitem id="sale.menu_sale_invoicing" active="False"/>
+    </data>
+</odoo>

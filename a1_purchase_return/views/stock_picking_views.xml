@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <record id="purchase_stock_return_picking_form_view_inherit" model="ir.ui.view">-->
+<!--        <field name="name">a1.purchase.stock.return.picking.inherit.form</field>-->
+<!--        <field name="model">stock.return.picking</field>-->
+<!--        <field name="inherit_id" ref="stock.view_stock_return_picking_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='x_select_all']" position="before">-->
+<!--                <field name="company_id"/>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//button[@name='create_returns']" position="after">-->
+<!--                <button-->
+<!--                        name="action_wizard_stock_picking_return"-->
+<!--                        class="btn-primary"-->
+<!--                        invisible="not x_has_purchase_order"-->
+<!--                        string="Return" type="object">-->
+<!--                   <field name="x_has_purchase_order" invisible="1"/>-->
+<!--                </button>-->
+<!--            </xpath>-->
+
+<!--        </field>-->
+<!--    </record>-->
+
+
+    <record id="stock_picking_form_view_inherit" model="ir.ui.view">
+        <field name="name">stock.pikcing.inherit.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_reception_report']" position="before">
+                <button name="action_view_purchase_return"
+                        type="object" class="oe_stat_button"
+                        icon="fa-file"
+                        invisible="x_count_purchase_order_return == 0">
+                    <field name="x_return_purchase_order_return_ids" widget="statinfo" invisible="1"/>
+                    <field name="x_count_purchase_order_return" widget="statinfo" string="Purchase returns"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

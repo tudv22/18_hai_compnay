@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_sale_order_form_a1_inherit_a1_sale_stock" model="ir.ui.view">
+            <field name="name">a1.sale.stock.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority" eval="1000"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list//field[@name='product_uom_qty']" position="before">
+                    <field name="x_free_qty"/>
+                </xpath>
+                <xpath expr="//group[@name='sale_shipping']//field[@name='delivery_status']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sale_shipping']//field[@name='warehouse_id'][@force_save='1']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='partner_details']//field[@name='partner_invoice_id']" position="before">
+                    <field name="delivery_status" invisible="state != 'sale'"/>
+                </xpath>
+                <xpath expr="//div[hasclass('o_td_label')][1]" position="before">
+                    <field name="warehouse_id" options="{'no_create': True}" groups="stock.group_stock_multi_warehouses"
+                           force_save="1" readonly="state == 'sale'"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

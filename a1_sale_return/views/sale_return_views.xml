@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="a1_sale_return_form" model="ir.ui.view">
+        <field name="name">a1.sale.return.form</field>
+        <field name="model">sale.order</field>
+        <field name="mode">primary</field>
+        <field name="priority">10000</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_confirm" invisible="state != 'draft'" type="object" string="Confirm"
+                            context="{'validate_analytic': True}" class="oe_highlight" id="bid_confirm"
+                            data-hotkey="q"/>
+                    <button name="action_draft" invisible="state != 'cancel'" string="Set to Draft" type="object"
+                            data-hotkey="o"/>
+                    <button name="action_cancel" invisible="state not in ('draft', 'sale')"
+                            string="Cancel" type="object" data-hotkey="x"/>
+                    <button id="create_invoice" name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
+                            type="action" class="btn-primary" context="{'default_advance_payment_method': 'percentage'}" data-hotkey="q"
+                            invisible="invoice_status != 'to invoice'"/>
+                    <button id="create_invoice_percentage" name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
+                            type="action" context="{'default_advance_payment_method': 'percentage'}" data-hotkey="q"
+                            invisible="invoice_status != 'no' or state != 'sale'"/>
+                    <button class="oe_highlight" invisible="state != 'sale'" name="action_preview_print_sor"
+                            string="Print report" type="object"/>
+                    <field name="x_return_state" widget="statusbar" statusbar_visible="draft,to_approve,sale"
+                           readonly="1"/>
+                    <field name="state" invisible="1"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_invoice"
+                                class="oe_stat_button"
+                                icon="fa-pencil-square-o"
+                                invisible="invoice_count == 0 or state in ('draft', 'sent', 'to approve')">
+                            <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            <field name='invoice_ids' invisible="1"/>
+                        </button>
+                        <button type="object"
+                                name="action_view_delivery"
+                                class="oe_stat_button"
+                                icon="fa-truck" invisible="delivery_count == 0" groups="stock.group_stock_user">
+                            <field name="delivery_count" widget="statinfo" string="Delivery" help="Delivery"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <span class="o_form_label">Sale Order Return</span>
+                        <h1 class="d-flex">
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" widget="res_partner_many2one"
+                                   context="{'res_partner_search_mode': 'supplier', 'show_vat': True}"
+                                   placeholder="Name, TIN, Email, or Reference"
+                                   readonly="state != 'draft'"/>
+                            <field name="x_origin_sale_id"
+                                   options="{'no_create': True}"
+                                   domain="[('x_type', '=', 'sale'), ('state', 'in', ('sale', 'done')), ('delivery_status', '!=', 'pending')]"
+                                   context="{'filter_partner_id': partner_id}"
+                                   readonly="state != 'draft'"/>
+                            <field name="x_origin_picking_id" invisible="not x_origin_picking_id" readonly="1"/>
+                            <field name="commitment_date" readonly="state in ['cancel', 'done', 'sale']"/>
+                            <field name="date_order" readonly="state in ['cancel', 'done', 'sale']"
+                                   string="Return date"/>
+                            <field name="payment_term_id" readonly="state in ['cancel', 'done', 'sale']"/>
+                            <field name="delivery_status" invisible="state != 'sale'"/>
+                            <field name="invoice_status" invisible="state != 'sale'"/>
+                        </group>
+                        <group>
+                            <field name="user_id" readonly="state != 'draft'"/>
+                            <field name="x_department_id" options="{'no_create': True, 'no_edit':True}"
+                                   readonly="state != 'draft'"/>
+                            <field name="company_id" readonly="state in ['cancel', 'done', 'sale']"/>
+                            <field name="warehouse_id" readonly="state == 'cancel'"/>
+                            <field name="client_order_ref" invisible="1"/>
+                            <field name="company_id" invisible="1" readonly="state in ['cancel', 'done', 'sale']"/>
+                            <field name="tax_calculation_rounding_method" invisible="1"/>
+                            <field name="x_location_id" domain="[('usage', '=', 'internal')]"
+                                   readonly="x_return_state != 'draft'" required="1"/>
+                            <field name="x_picking_type_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Product" name="order_lines">
+                            <field name="tax_country_id" invisible="1"/>
+                            <field name="order_line"
+                                   widget="section_and_note_one2many"
+                                   mode="list,kanban"
+                                   context="{'default_state': 'draft'}"
+                                   readonly="state != 'draft'">
+                                <list string="Sale Order Lines" editable="bottom">
+                                    <field name="tax_calculation_rounding_method" column_invisible="True"/>
+                                    <field name="display_type" column_invisible="True"/>
+                                    <field name="company_id" column_invisible="True"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="state" column_invisible="True"/>
+                                    <field name="product_type" column_invisible="True"/>
+                                    <field name="product_uom" groups="!uom.group_uom"/>
+                                    <field name="product_uom_category_id" column_invisible="True"/>
+                                    <field name="invoice_lines" column_invisible="True"/>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="product_id"
+                                           readonly="state in ('sale', 'to approve', 'done', 'cancel')"
+                                           required="not display_type"
+                                           width="35%"
+                                           context="{'partner_id': parent.partner_id, 'quantity': product_uom_qty, 'company_id': parent.company_id, 'use_partner_name': False}"
+                                           force_save="1" domain="[('sale_ok', '=', True)]"/>
+                                    <field name="name" widget="section_and_note_text"/>
+                                    <field name="analytic_distribution" widget="analytic_distribution"
+                                           optional="hide"
+                                           groups="analytic.group_analytic_accounting"
+                                           options="{'product_field': 'product_id', 'business_domain': 'sale_order', 'amount_field': 'price_subtotal'}"/>
+                                    <field name="product_uom_qty"/>
+                                    <field name="qty_delivered" column_invisible="1"/>
+                                    <field name="qty_invoiced" string="Customer received quantity"
+                                           column_invisible="1"/>
+                                    <field name="product_uom" string="UoM" groups="uom.group_uom"
+                                           readonly="state in ('sale', 'done', 'cancel')"
+                                           required="not display_type"
+                                           options="{'no_open': True}"
+                                           force_save="1" optional="show"/>
+                                    <field name="product_packaging_qty"
+                                           invisible="not product_id or not product_packaging_id"
+                                           groups="product.group_stock_packaging" optional="show"/>
+                                    <field name="product_packaging_id" invisible="not product_id"
+                                           context="{'default_product_id': product_id, 'tree_view_ref':'product.product_packaging_tree_view', 'form_view_ref':'product.product_packaging_form_view'}"
+                                           groups="product.group_stock_packaging" optional="show"/>
+                                    <field name="price_unit" readonly="qty_invoiced != 0"/>
+
+                                    <field name="tax_id" widget="many2many_tags"
+                                           domain="[('type_tax_use', '=', 'sale'), ('company_id', 'parent_of', parent.company_id), ('country_id', '=', parent.tax_country_id), ('active', '=', True)]"
+                                           context="{'default_type_tax_use': 'sale', 'search_view_ref': 'account.account_tax_view_search'}"
+                                           options="{'no_create': True}" optional="show"/>
+                                    <field name="discount" string="Disc.%"
+                                           optional="hide"/>
+                                    <field name="price_subtotal" string="Tax excl."/>
+                                    <field name="price_total"
+                                           string="Tax incl."
+                                           column_invisible="parent.tax_calculation_rounding_method == 'round_globally'"/>
+                                </list>
+                                <form string="Sale Order Line">
+                                    <field name="tax_calculation_rounding_method" invisible="1"/>
+                                    <field name="state" invisible="1"/>
+                                    <field name="display_type" invisible="1"/>
+                                    <field name="company_id" invisible="1"/>
+                                    <group invisible="display_type">
+                                        <group>
+                                            <field name="product_uom_category_id" invisible="1"/>
+                                            <field name="product_id"
+                                                   context="{'partner_id': parent.partner_id}"
+                                                   widget="many2one_barcode"
+                                                   domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"
+                                                   readonly="state in ('sale', 'to approve', 'done', 'cancel')"
+                                            />
+                                            <label for="product_uom_qty"/>
+                                            <div class="o_row">
+                                                <field name="product_uom_qty"/>
+                                                <field name="product_uom" groups="uom.group_uom"
+                                                       required="not display_type"/>
+                                            </div>
+                                            <field name="qty_invoiced" string="Billed Quantity"
+                                                   invisible="parent.state not in ('sale', 'done')"/>
+                                            <field name="product_packaging_qty"
+                                                   invisible="not product_id or not product_packaging_id"
+                                                   groups="product.group_stock_packaging"/>
+                                            <field name="product_packaging_id" invisible="not product_id"
+                                                   context="{'default_product_id': product_id, 'tree_view_ref':'product.product_packaging_tree_view', 'form_view_ref':'product.product_packaging_form_view'}"
+                                                   groups="product.group_stock_packaging"/>
+                                            <field name="price_unit"/>
+                                            <field name="discount"/>
+                                            <field name="tax_id" widget="many2many_tags"
+                                                   domain="[('type_tax_use', '=', 'sale'), ('company_id', 'parent_of', parent.company_id), ('country_id', '=', parent.tax_country_id)]"
+                                                   options="{'no_create': True}"/>
+                                        </group>
+                                        <group>
+                                            <field name="analytic_distribution" widget="analytic_distribution"
+                                                   groups="analytic.group_analytic_accounting"
+                                                   options="{'product_field': 'product_id', 'business_domain': 'sale_order'}"/>
+                                        </group>
+                                        <group>
+                                            <notebook colspan="4">
+                                                <page string="Notes" name="notes">
+                                                    <field name="name"/>
+                                                </page>
+                                                <page string="Invoices and Incoming Shipments"
+                                                      name="invoices_incoming_shiptments">
+                                                    <field name="invoice_lines"/>
+                                                </page>
+                                            </notebook>
+                                        </group>
+                                    </group>
+                                    <label for="name" string="Section Name (eg. Products, Services)"
+                                           invisible="display_type != 'line_section'"/>
+                                    <label for="name" string="Note" invisible="display_type != 'line_note'"/>
+                                    <field name="name" nolabel="1" invisible="not display_type"/>
+                                </form>
+                            </field>
+                            <group>
+                                <group>
+                                    <field colspan="2" name="note" nolabel="1"
+                                           placeholder="Define your terms and conditions ..."/>
+                                </group>
+                                <group class="oe_subtotal_footer">
+                                    <field name="tax_totals" widget="account-tax-totals-field" nolabel="1" colspan="2"
+                                           readonly="1"/>
+                                </group>
+                            </group>
+
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_order_tree_inherit_a1_sale_return" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit.sale.return</field>
+        <field name="model">sale.order</field>
+        <field name="mode">primary</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state=='cancel'">
+                <header>
+                    <button name="action_btn_create_invoices"
+                            type="object"
+                            string="Create Invoices"
+                            class="btn-secondary"/>
+                </header>
+                <field name="name" readonly="1" decoration-info="state in ('draft','sent')"/>
+                <field name="client_order_ref" optional="hide"/>
+                <field name="x_origin_sale_id"/>
+                <field name="date_order" column_invisible="not context.get('quotation_only', False)"
+                       readonly="state in ['cancel', 'done', 'sale']" optional="show"/>
+                <field name="partner_id" readonly="1"/>
+                <field name="company_id" readonly="1" options="{'no_create': True}" optional="hide"/>
+                <field name="user_id" widget="many2one_avatar_user" optional="show"/>
+                <field name="x_department_id" optional="hide"/>
+                <field name="amount_untaxed" sum="Total Untaxed amount" string="Untaxed" widget="monetary"
+                       optional="hide"/>
+                <field name="amount_total" sum="Total amount" widget="monetary" optional="show"/>
+                <field name="currency_id" column_invisible="True" readonly="state in ['cancel', 'done', 'sale']"/>
+                <field name="state" column_invisible="1"/>
+                <field name="x_return_state"
+                       widget="badge"
+                       decoration-muted="x_return_state == 'draft'"
+                       decoration-warning="x_return_state == 'done'"
+                       decoration-success="x_return_state == 'sale'"
+                       decoration-danger="x_return_state == 'cancel'"
+                />
+                <field name="invoice_status" column_invisible="context.get('quotation_only', False)"
+                       decoration-success="invoice_status == 'invoiced'"
+                       decoration-info="invoice_status == 'to invoice'"
+                       decoration-warning="invoice_status == 'upselling'"
+                       widget="badge"
+                       optional="hide"
+                />
+                <field name="delivery_status"
+                       string="Delivery Status"
+                       widget="badge"
+                       optional="hide"
+                       decoration-success="delivery_status== 'full'"
+                       decoration-info="delivery_status== 'partial'"
+                       decoration-warning="delivery_status== 'started'"
+                />
+                <field name="create_date" string="Create date" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="sale_order_return_view_search_inherit_sale" model="ir.ui.view">
+        <field name="name">sale.order.return.search.inherit.sale</field>
+        <field name="model">sale.order</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <filter name="my_sale_orders_filter" position="after">
+                <separator/>
+                <filter string="Draft" name="draft" domain="[('state','=','draft')]"/>
+                <filter string="Sale return" name="sale_return" domain="[('state','=','sale')]"/>
+                <separator/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="a1_sale_return_form_action" model="ir.actions.act_window">
+        <field name="name">Sale Return Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">list,kanban,form,pivot,graph,calendar</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                    (0, 0, {'view_mode': 'list', 'view_id': ref('a1_sale_return.sale_order_tree_inherit_a1_sale_return')}),
+                    (0, 0, {'view_mode': 'form', 'view_id': ref('a1_sale_return.a1_sale_return_form')}),
+                    (0, 0, {'view_mode': 'kanban', 'view_id': ref('sale.view_sale_order_kanban')}),
+                    (0, 0, {'view_mode': 'pivot', 'view_id': ref('sale.view_sale_order_pivot')}),
+                    (0, 0, {'view_mode': 'graph', 'view_id': ref('sale.view_sale_order_graph')}),
+                    (0, 0, {'view_mode': 'calendar', 'view_id': ref('sale.view_sale_order_calendar')}),
+                ]"/>
+        <field name="domain">[('x_type', '=', 'return')]</field>
+        <field name="context">{'default_x_type': 'return'}</field>
+        <field name="search_view_id" ref="sale_order_return_view_search_inherit_sale"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No sale return order found. Let's create one!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_a1_sale_return_form_action"
+              action="a1_sale_return_form_action"
+              parent="sale.sale_order_menu"
+              sequence="21"
+    />
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="IO_stock_report_quantity_form" model="ir.ui.view">
+            <field name="name">IO_stock_report_quantity_form</field>
+            <field name="model">in.out.stock.report</field>
+            <field name="arch" type="xml">
+                <form string="report_quantity">
+                    <group>
+                        <field name="company_id"/>
+                        <field name="warehouse_ids" context="{'filter_warehouse': True, 'company_id': company_id}"
+                               options="{'no_open':True,'no_create':True}" widget="many2many_tags"/>
+                        <field name="start_date" required="1"/>
+                        <field name="end_date" required="1"/>
+                    </group>
+                    <footer>
+                        <button name="create_report_quantity" type="object" string="Báo cáo" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="IO_stock_report_quantity_act">
+            <field name="name">report_quantity_action</field>
+            <field name="res_model">in.out.stock.report</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="a1_stock_report.IO_stock_report_quantity_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.attachment" id="IO_stock_report_quantity_attachment">
+            <field name="name">report_quantity_attachment</field>
+            <field name="type">binary</field>
+            <field name="datas" type="base64" file="a1_stock_report/static/xls/in_out_stock_report_quantity.xlsx"/>
+            <field name="store_fname">IO_stock_report_quantity.xlsx</field>
+        </record>
+    </data>
+</odoo>

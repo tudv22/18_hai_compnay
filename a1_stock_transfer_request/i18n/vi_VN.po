@@ -1,0 +1,1070 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* a1_stock_transfer_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20241007\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-07 03:42+0000\n"
+"PO-Revision-Date: 2025-02-07 03:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.report,print_report_name:a1_stock_transfer_request.anna_print_stock_transfer_request
+msgid ""
+"'Stock Transfer Request Report - %s' % (object.name).replace('/', '')\n"
+"            "
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid "(Ký, họ tên)"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<b>Mã hàng</b>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<b>Mã quy cách</b>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<b>Nhập tại kho</b>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<b>Số lượng</b>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<b>Thành tiền</b>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<b>Tên hàng</b>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<b>Xuất tại kho</b>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<b>ĐVT</b>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<b>Đơn giá</b>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_kanban_view
+msgid "<small>Source company</small>"
+msgstr "Công ty nguồn"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "<span class=\"o_stat_text\">Pickings in</span>"
+msgstr "Phiếu nhập kho"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "<span class=\"o_stat_text\">Pickings out</span>"
+msgstr "Phiếu xuất kho"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "<span class=\"o_stat_text\">Purchase orders</span>"
+msgstr "Đơn mua"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid ""
+"<span style=\"font-size: 13px;\">\n"
+"                                                    <span>Diễn giải:</span>\n"
+"                                                </span>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid ""
+"<span style=\"font-size: 13px;\">Người vận chuyển: "
+"...................</span>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid "<span>Chuyển kho về địa điểm kinh doanh</span>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.anna_print_stock_transfer_request_template
+msgid "<strong>Cộng</strong>"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model,name:a1_stock_transfer_request.model_a1_stock_assign_serial
+msgid "A1 Stock Assign Serial Numbers"
+msgstr "Gán serial cho sản phẩm"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "AM Approve"
+msgstr "AM đã duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields.selection,name:a1_stock_transfer_request.selection__stock_transfer_request__state__am_wh_approved
+msgid "AM-Warehouse approved"
+msgstr "AM-Kho đã duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__access_warning
+msgid "Access warning"
+msgstr "Cảnh báo truy cập"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.report,name:a1_stock_transfer_request.anna_print_stock_transfer_request
+msgid "Accountant Print Stock Transfer Request"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__activity_ids
+msgid "Activities"
+msgstr "Hoạt động"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__activity_state
+msgid "Activity State"
+msgstr "Trạng thái hoạt động"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Approve"
+msgstr "Phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Back to draft"
+msgstr "Thiết lập dự thảo"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields.selection,name:a1_stock_transfer_request.selection__stock_transfer_request__state__cancel
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.reject_stock_request_wizard_from
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__company_id
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_reject_stock_transfer_request__create_uid
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__create_uid
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__create_uid
+msgid "Created by"
+msgstr "Người tạo"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_reject_stock_transfer_request__create_date
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__create_date
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__access_url
+msgid "Customer Portal URL"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request_line__uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr "Đơn vị đo lường mặc định được sử dụng cho tất cả các hoạt động kho"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__description
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__dest_warehouse_id
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__dest_warehouse_id
+msgid "Dest warehouse"
+msgstr "Kho đích"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Destination Location"
+msgstr "Địa điểm đích"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_picking__x_destination_warehouse_id
+msgid "Destination Warehouse"
+msgstr "Kho đích"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_reject_stock_transfer_request__display_name
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__display_name
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Do you really want to cancel?"
+msgstr "Bạn có thực sự  muốn hủy không?"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields.selection,name:a1_stock_transfer_request.selection__stock_transfer_request__state__done
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Done"
+msgstr "Hoàn thành"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields.selection,name:a1_stock_transfer_request.selection__stock_transfer_request__state__draft
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__expected_date
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__expected_date
+msgid "Expected date"
+msgstr "Ngày dự kiến hoàn thành"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__export_qty
+msgid "Export quantity"
+msgstr "Số lượng xuất"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_reject_stock_transfer_request__id
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__id
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__id
+msgid "ID"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__message_has_error
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__import_line_file_name
+msgid "Import Line File Name"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Import Template for transfer request inter-company"
+msgstr "Tải xuống mẫu YCĐC liên cty"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Import Template for transfer request internal"
+msgstr "Tải xuống mẫu YCĐC liên kho"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "In date"
+msgstr "Còn hạn"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields.selection,name:a1_stock_transfer_request.selection__stock_transfer_request__transfer_request_type__inter
+msgid "Inter"
+msgstr "Điều chuyển liên công ty"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields.selection,name:a1_stock_transfer_request.selection__stock_transfer_request__transfer_request_type__internal
+msgid "Internal"
+msgstr "Điều chuyển nội bộ liên kho"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_warehouse__x_is_inter_company
+msgid "Is inter-company"
+msgstr "Là kho liên công ty"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__is_processing
+msgid "Is processing"
+msgstr "Đang xử lý"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_reject_stock_transfer_request__write_uid
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__write_uid
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_reject_stock_transfer_request__write_date
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__write_date
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__location_id
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__location_id
+msgid "Location"
+msgstr "Địa điểm nguồn"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__location_dest_id
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__location_dest_id
+msgid "Location dest"
+msgstr "Địa điểm đích"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.reject_stock_request_wizard_from
+msgid "Lost Reason"
+msgstr "Lí do mất"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Manager Approved"
+msgstr "Quản lý đã duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields.selection,name:a1_stock_transfer_request.selection__stock_transfer_request__state__manager_approved
+msgid "Manager approved"
+msgstr "Quản lý đã duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Missing required value for Source Company field in line %s"
+msgstr "Thiếu giá trị bắt buộc cho trường Công ty nguồn ở dòng %s"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Missing required value for Source Warehouse field in line %s"
+msgstr "Thiếu giá trị bắt buộc cho trường Kho nguồn ở dòng %s"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "My Request"
+msgstr "Yêu cầu của tôi"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__name
+msgid "Name"
+msgstr "Mã phiếu"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "New"
+msgstr "Mới"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid "Người lập phiếu"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid "Người vận chuyển"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__no_create_einvoice
+msgid "No create Einvoice"
+msgstr "Không tạo hóa đơn điện tử (E-invoice)"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__note
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Order"
+msgstr "Mã phiếu"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Out date"
+msgstr "Hết hạn"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid "PHIẾU XUẤT CHUYỂN KHO"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__picking_in_count
+msgid "Picking In Count"
+msgstr "SL phiếu nhập kho"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__picking_out_count
+msgid "Picking Out Count"
+msgstr "SL phiếu xuất kho"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Pickings in"
+msgstr "Phiếu nhập kho"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Pickings out"
+msgstr "Phiếu xuất kho"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Please config Inter-Company Transactions auto validation in Settings"
+msgstr ""
+"Vui lòng cấu hình Giao dịch liên công ty 'Xác thực tự động' trong thiết lập!"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Please config Inter-Company Transactions in Settings"
+msgstr ""
+"Vui lòng cấu hình Giao dịch liên công ty đồng bộ đơn mua và đơn bán trong "
+"thiết lập!"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__access_url
+msgid "Portal Access URL"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Post"
+msgstr "Gửi"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields.selection,name:a1_stock_transfer_request.selection__stock_transfer_request__state__posted
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Posted"
+msgstr "Đề nghị"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_picking.py:0
+#, python-format
+msgid ""
+"Pricelist is not configured for product %s. Cannot create inter-company "
+"purchase order.\n"
+msgstr ""
+"Bạn chưa cấu hình bảng giá cho sản phẩm %s. Không thể tạo đơn mua liên công "
+"ty!"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Print"
+msgstr "In phiếu"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__product_id
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_picking.py:0
+#, python-format
+msgid "Product %s is out of stock at %s, please check again."
+msgstr "Sản phẩm %s không đủ tồn tại %s, vui lòng kiểm tra lại!"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_picking.py:0
+#, python-format
+msgid "Product: %s, Expected Quantity: %s, Actual Quantity: %s \n"
+msgstr "Sản phẩm: %s, Số lượng dự kiến: %s, Số lượng thực tế: %s \n"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model,name:a1_stock_transfer_request.model_purchase_order
+msgid "Purchase Order"
+msgstr "Đơn mua hàng"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__purchase_order_count
+msgid "Purchase Order Count"
+msgstr "Số đơn mua hàng"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__purchase_ids
+msgid "Purchase order"
+msgstr "Đơn mua hàng"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Purchase orders"
+msgstr "Đơn mua hàng"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__remaining_qty
+msgid "Quantity remaining"
+msgstr "Số lượng còn lại"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model,name:a1_stock_transfer_request.model_stock_quant
+msgid "Quants"
+msgstr "Quant"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__receive_qty
+msgid "Receive quantity"
+msgstr "Số lượng nhận"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields.selection,name:a1_stock_transfer_request.selection__stock_transfer_request__state__reject
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_form_view
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_reject_stock_transfer_request__reject_reason
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__reject_reason
+msgid "Reject Reason"
+msgstr "Lý do từ chối"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.act_window,name:a1_stock_transfer_request.reject_stock_request_wizard
+msgid "Reject Stock Transfer Request"
+msgstr "Từ chối yêu cầu điều chuyển"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model,name:a1_stock_transfer_request.model_reject_stock_transfer_request
+msgid "Reject stock transfer request"
+msgstr "Từ chối yêu cầu điều chuyển"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Rejected or Cancelled"
+msgstr "Từ chối hoặc đã hủy"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__request_date
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Request Date"
+msgstr "Ngày yêu cầu"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__request_line_ids
+msgid "Request line"
+msgstr "Chi tiết yêu cầu"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__request_qty
+msgid "Request quantity"
+msgstr "SL yêu cầu"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__quantity_in_stock
+msgid "Quantity in stock"
+msgstr "Tồn kho"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request_line.py:0
+#, python-format
+msgid "Request quantity should not be less than or equal to 0 !!"
+msgstr "Số lượng yêu cầu không được nhỏ hơn hoặc bằng 0 !!"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__requester_id
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Requester"
+msgstr "Người yêu cầu"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Search Stock Transfer Request"
+msgstr "Tìm kiếm yêu cầu điều chuyển"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__access_token
+msgid "Security Token"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Show all records which has next expected date is before today"
+msgstr "Hiển thị tất cả các bản ghi có ngày dự kiến trước ngày hôm nay"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Source Warehouse or Source Company or Expected date is missing!"
+msgstr "Kho nguồn hoặc Công ty nguồn hoặc ngày dự kiến đang thiếu:"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__source_company_id
+msgid "Source company"
+msgstr "Công ty nguồn"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__source_warehouse_id
+msgid "Source warehouse"
+msgstr "Kho nguồn"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "State"
+msgstr "Trạng thái"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model,name:a1_stock_transfer_request.model_stock_move
+msgid "Stock Move"
+msgstr "Điều chuyển tồn kho"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.act_window,name:a1_stock_transfer_request.stock_transfer_inter_request_need_am_wh_approve_reminder_action
+msgid "Stock Transfer Inter Request Need AM-Warehouse Approve Reminder"
+msgstr "YCĐC liên công ty cần AM-Kho phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.act_window,name:a1_stock_transfer_request.stock_transfer_inter_request_reminder_action
+msgid "Stock Transfer Inter Request Need Manager Approve Reminder"
+msgstr "YCĐC liên công ty cần quản lý phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.act_window,name:a1_stock_transfer_request.stock_transfer_inter_request_reminder_need_post_action
+msgid "Stock Transfer Inter Request Need Post Reminder"
+msgstr "YCĐC liên công ty cần gửi"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.act_window,name:a1_stock_transfer_request.stock_transfer_internal_request_need_am_wh_approve_reminder_action
+msgid "Stock Transfer Internal Request Need AM-Warehouse Approve Reminder"
+msgstr "YCĐC nội bộ cần quản lý phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.act_window,name:a1_stock_transfer_request.stock_transfer_internal_request_reminder_action
+msgid "Stock Transfer Internal Request Need Manager Approve Reminder"
+msgstr "YCĐC liên kho cần quản lý phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.act_window,name:a1_stock_transfer_request.stock_transfer_internal_request_reminder_need_post_action
+msgid "Stock Transfer Internal Request Need Post Reminder"
+msgstr "YCĐC liên kho cần gửi"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model,name:a1_stock_transfer_request.model_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_purchase_order__x_stock_transfer_request_id
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_picking__x_stock_transfer_request_id
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__request_id
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_graph
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_internal_pivot
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_pivot
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_tree
+msgid "Stock Transfer Request"
+msgstr "Yêu cầu điều chuyển"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.act_window,name:a1_stock_transfer_request.stock_transfer_request_inter_action
+#: model:ir.ui.menu,name:a1_stock_transfer_request.stock_transfer_request_inter_menu
+msgid "Stock Transfer Request Inter"
+msgstr "Phiếu YCĐC liên công ty"
+
+#. module: a1_stock_transfer_request
+#: model:ir.actions.act_window,name:a1_stock_transfer_request.stock_transfer_request_internal_action
+#: model:ir.ui.menu,name:a1_stock_transfer_request.stock_transfer_request_interal_menu
+msgid "Stock Transfer Request Internal"
+msgstr "Điều chuyển nội bộ (liên kho)"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_move__x_transfer_request_line_id
+msgid "Stock Transfer Request Line"
+msgstr "Chi tiết đơn YCĐC"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__stock_move_ids
+msgid "Stock move"
+msgstr "Dòng dịch chuyển"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__picking_ids
+msgid "Stock picking"
+msgstr "Phiếu chuyển hàng"
+
+#. module: a1_stock_transfer_request
+#: model:ir.ui.menu,name:a1_stock_transfer_request.menu_stock_transfer_inter_request_need_am_wh_approve
+msgid "Stock transfer inter request need AM-Warehouse approve"
+msgstr "YCĐC liên công ty cần AM-Kho phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.ui.menu,name:a1_stock_transfer_request.menu_stock_transfer_inter_request_need_manager_approve
+msgid "Stock transfer inter request need manager approve"
+msgstr "YCĐC liên công ty cần quản lý phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.ui.menu,name:a1_stock_transfer_request.menu_stock_transfer_inter_request_need_post
+msgid "Stock transfer inter request need post"
+msgstr "YCĐC liên công ty cần gửi"
+
+#. module: a1_stock_transfer_request
+#: model:ir.ui.menu,name:a1_stock_transfer_request.menu_stock_transfer_internal_request_need_am_wh_approve
+msgid "Stock transfer interal request need AM-Warehouse approve"
+msgstr "YCĐC liên kho cần AM-Kho phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.ui.menu,name:a1_stock_transfer_request.menu_stock_transfer_internal_request_need_manager_approve
+msgid "Stock transfer interal request need manager approve"
+msgstr "YCĐC liên kho cần quản lý phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.ui.menu,name:a1_stock_transfer_request.menu_stock_transfer_internal_request_need_post
+msgid "Stock transfer interal request need post"
+msgstr "YCĐC liên kho cần gửi"
+
+#. module: a1_stock_transfer_request
+#: model:ir.ui.menu,name:a1_stock_transfer_request.menu_stock_transfer_request_reminder
+msgid "Stock transfer request reminder"
+msgstr "Nhắc nhở YCĐC nội bộ/liên công ty"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.reject_stock_request_wizard_from
+msgid "Submit"
+msgstr "Xác nhận"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid "Số:"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__import_line_file
+msgid "Template Import File"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_picking.py:0
+#, python-format
+msgid "The actual quantity of the product does not match the demand \n"
+msgstr "Số lượng thực tế của sản phẩm không khớp với nhu cầu: \n"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid "Thủ kho nhập"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.print_stock_transfer_request_template
+msgid "Thủ kho xuất"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__total_export_qty
+msgid "Total export quantity"
+msgstr "Tổng số lượng xuất"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__total_receive_qty
+msgid "Total receive quantity"
+msgstr "Tổng số lượng nhận"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__total_request_qty
+msgid "Total request quantity"
+msgstr "Tổng số lượng yêu cầu"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model,name:a1_stock_transfer_request.model_stock_picking
+msgid "Transfer"
+msgstr "Lệnh chuyển hàng"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model,name:a1_stock_transfer_request.model_stock_transfer_request_line
+msgid "Transfer Request Line"
+msgstr "Chi tiết YCĐC"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__transfer_request_type
+msgid "Transfer request type"
+msgstr "Loại YCĐC"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__transfer_warehouse_id
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__transfer_warehouse_id
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_view_search
+msgid "Transfer warehouse"
+msgstr "Kho điều chuyển"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request_line__uom_id
+msgid "Uom"
+msgstr "ĐVT"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model,name:a1_stock_transfer_request.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Kho hàng"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_transfer_request__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,help:a1_stock_transfer_request.field_stock_transfer_request__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "You can only delete transfer requests in 'draft' or 'cancel' state."
+msgstr "Bạn chỉ có thể xóa các YCĐC ở trạng thái 'Nháp' hoặc 'Hủy'."
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Product %s at warehouse %s"
+msgstr "Sản phẩm %s tại kho %s"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Are duplicated. Please check again!"
+msgstr "Bị trùng lặp. Vui lòng kiểm tra lại!"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Only Request in Manager approved state can approve!"
+msgstr "Chỉ có thể duyệt YCĐC ở trạng thái 'Quản lý đã duyệt:"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.stock_transfer_request_tree
+msgid "Approves"
+msgstr "AM-Kho phê duyệt"
+
+#. module: a1_stock_transfer_request
+#: model:ir.model.fields,field_description:a1_stock_transfer_request.field_stock_picking__x_origin_out_picking_from_transfer_request_id
+msgid "Origin Out Picking"
+msgstr "Phiếu xuất chia hàng gốc từ YCĐC"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.view_picking_search_inherit_stock_picking
+msgid "Receipt picking of Normal Purchase Order"
+msgstr "Phiếu nhập kho từ đơn mua hàng thông thường"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.view_picking_search_inherit_stock_picking
+msgid "Receipt picking of Internal Purchase Order"
+msgstr "Phiếu nhập kho từ đơn mua hàng nội bộ"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.view_picking_search_inherit_stock_picking
+msgid "Deliver picking of Normal Sale Order"
+msgstr "Phiếu giao hàng từ đơn bán hàng thông thường"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.view_picking_search_inherit_stock_picking
+msgid "Deliver picking of Internal Sale Order"
+msgstr "Phiếu giao hàng từ đơn bán hàng nội bộ"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.view_picking_search_inherit_stock_picking
+msgid "Deliver picking of Stock Transfer Request Inter"
+msgstr "Phiếu xuất kho chia hàng từ YCĐC liên công ty"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.view_picking_search_inherit_stock_picking
+msgid "Deliver picking of Stock Transfer Request Interal"
+msgstr "Phiếu xuất kho chia hàng từ YCĐC liên kho"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.view_picking_search_inherit_stock_picking
+msgid "Receipt picking of Stock Transfer Request Inter"
+msgstr "Phiếu nhập kho chia hàng từ YCĐC liên công ty"
+
+#. module: a1_stock_transfer_request
+#: model_terms:ir.ui.view,arch_db:a1_stock_transfer_request.view_picking_search_inherit_stock_picking
+msgid "Receipt picking of Stock Transfer Request Interal"
+msgstr "Phiếu nhập kho chia hàng từ YCĐC liên kho"
+
+#. module: a1_stock_transfer_request
+#. odoo-python
+#: code:addons/a1_stock_transfer_request/models/stock_transfer_request.py:0
+#, python-format
+msgid "Current user does not have permission to approve!"
+msgstr "Người dùng hiện tại không có quyền phê duyệt!"

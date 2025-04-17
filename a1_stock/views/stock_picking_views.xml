@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_picking_form" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+             <field name="priority">1000</field>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_view_reception_report']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_done']" position="attributes">
+                    <attribute name="invisible">False</attribute>
+                    <attribute name="readonly">state != 'draft'</attribute>
+                </xpath>
+                <xpath expr="//field[@name='picking_type_id']" position="attributes">
+                    <attribute name="invisible">picking_type_code=='internal'</attribute>
+                </xpath>
+                <xpath expr="//field[@name='picking_type_id']" position="after">
+                    <field name="x_warehouse_internal_id" invisible="picking_type_code!='internal'" readonly="False"/>
+                </xpath>
+                <xpath expr="//button[@name='%(stock.act_stock_return_picking)d']" position="attributes">
+                    <attribute name="invisible">picking_type_code=='outgoing'</attribute>
+                </xpath>
+                <xpath expr="//button[@name='%(stock.action_report_delivery)d']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <!-- Tree view -->
+        <record id="view_stock_picking_tree_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.tree.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field" position="before">
+                    <field name="create_date" string="Creation Date"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_stock_picking_page_operation_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.page.operation.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='product_uom_qty']"
+                       position="before">
+                    <field name="x_free_qty"/>
+                </xpath>
+                <xpath expr="//field[@name='location_id']" position="after">
+                    <field name="user_id" options="{'no_create': True}" readonly="state != 'draft'" required="0"/>
+                    <field name="company_id" options="{'no_create': True}" readonly="state != 'draft'"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="stock.action_picking_tree_incoming" model="ir.actions.act_window">
+            <field name="domain">[('picking_type_code', '=', 'incoming')]</field>
+        </record>
+        <record id="stock.action_picking_tree_outgoing" model="ir.actions.act_window">
+            <field name="domain">[('picking_type_code', '=', 'outgoing')]</field>
+        </record>
+
+    </data>
+</odoo>

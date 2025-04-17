@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="a1_base_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">a1.base.res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="before">
+                <field name="x_partnership"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="x_identification_number" invisible="x_partnership == 'vendor'"/>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="x_old_code"/>
+            </xpath>
+            <xpath expr="//field[@name='company_registry']" position="after">
+                <field name="x_is_internal_partner"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="required">company_type == 'company' and x_partnership in ('vendor', 'both')</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="partner_view_partner_search_a1_inherit" model="ir.ui.view">
+        <field name="name">partner.search.inherit.a1.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="phone" filter_domain="['|', ('phone', 'ilike', self), ('mobile', 'ilike', self)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

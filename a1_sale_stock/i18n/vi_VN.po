@@ -1,0 +1,166 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* a1_sale_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-21 07:51+0000\n"
+"PO-Revision-Date: 2025-02-21 07:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: a1_sale_stock
+#: model_terms:ir.ui.view,arch_db:a1_sale_stock.view_move_form_inherit
+#: model_terms:ir.ui.view,arch_db:a1_sale_stock.view_stock_picking_carrier_partner_inherit
+msgid "Contact delivery"
+msgstr "Liên hệ giao hàng"
+
+#. module: a1_sale_stock
+#: model:ir.model.fields,field_description:a1_sale_stock.field_stock_picking__x_carrier_partner_id
+msgid "Delivery unit"
+msgstr "Đơn vị vận chuyển"
+
+#. module: a1_sale_stock
+#: model:ir.actions.act_window,name:a1_sale_stock.action_deposited_wholesale_reminder
+#: model:ir.ui.menu,name:a1_sale_stock.menu_deposited_wholesale
+msgid "Deposited wholesale"
+msgstr "Đơn hàng đã cọc"
+
+#. module: a1_sale_stock
+#: model:ir.model.fields,field_description:a1_sale_stock.field_sale_order_line__x_free_qty
+msgid "Free quantity"
+msgstr "Tồn kho khả dụng"
+
+#. module: a1_sale_stock
+#: model:ir.model.fields.selection,name:a1_sale_stock.selection__sale_order__x_payment_status__full
+msgid "Fully Paid"
+msgstr ""
+
+#. module: a1_sale_stock
+#: model:ir.model.fields,field_description:a1_sale_stock.field_account_bank_statement_line__x_invoice_address
+#: model:ir.model.fields,field_description:a1_sale_stock.field_account_move__x_invoice_address
+#: model:ir.model.fields,field_description:a1_sale_stock.field_account_payment__x_invoice_address
+msgid "Invoice address"
+msgstr "Địa chỉ xuất hóa đơn"
+
+#. module: a1_sale_stock
+#: model_terms:ir.ui.view,arch_db:a1_sale_stock.view_sales_order_filter_inherit
+msgid "Invoiced"
+msgstr "Đã xuất hóa đơn hết"
+
+#. module: a1_sale_stock
+#: model:ir.model,name:a1_sale_stock.model_account_move
+msgid "Journal Entry"
+msgstr "Bút toán"
+
+#. module: a1_sale_stock
+#: model_terms:ir.actions.act_window,help:a1_sale_stock.action_deposited_wholesale_reminder
+msgid "No deposited wholesale were made yet!"
+msgstr "Chưa có đơn hàng bán sỉ nào được đặt cọc!"
+
+#. module: a1_sale_stock
+#: model:ir.model.fields.selection,name:a1_sale_stock.selection__sale_order__x_payment_status__unpaid
+msgid "Not Paid"
+msgstr ""
+
+#. module: a1_sale_stock
+#: model_terms:ir.actions.act_window,help:a1_sale_stock.action_outdate_undeliveried_order_reminder
+#: model_terms:ir.actions.act_window,help:a1_sale_stock.action_undeliveried_order_reminder
+msgid "Not any undeliveried Order were made yet!"
+msgstr "Chưa có đơn hàng nào chưa giao!"
+
+#. module: a1_sale_stock
+#: model:ir.ui.menu,name:a1_sale_stock.menu_reminder_order_to_invoice
+msgid "Order to invoice"
+msgstr "Đơn hàng bán cần xuất hóa đơn"
+
+#. module: a1_sale_stock
+#: model:ir.ui.menu,name:a1_sale_stock.menu_reminder_order_to_upsell
+msgid "Order to upsell"
+msgstr "Đơn hàng có thể bán thêm"
+
+#. module: a1_sale_stock
+#: model:ir.actions.act_window,name:a1_sale_stock.action_outdate_undeliveried_order_reminder
+#: model:ir.ui.menu,name:a1_sale_stock.menu_reminder_outdate_undeliveried_order
+msgid "Outdate Undeliveried Order"
+msgstr "Đơn hàng bán quá hạn cần xuất kho"
+
+#. module: a1_sale_stock
+#: model:ir.model.fields.selection,name:a1_sale_stock.selection__sale_order__x_payment_status__partial
+msgid "Partially Paid"
+msgstr ""
+
+#. module: a1_sale_stock
+#: model:ir.model.fields,field_description:a1_sale_stock.field_sale_order__x_payment_status
+msgid "Payment Status"
+msgstr ""
+
+#. module: a1_sale_stock
+#: model:ir.ui.menu,name:a1_sale_stock.menu_sale_order_reminder_manager
+msgid "Reminders"
+msgstr "Nhắc nhở"
+
+#. module: a1_sale_stock
+#: model:ir.model,name:a1_sale_stock.model_sale_order
+msgid "Sales Order"
+msgstr "Đơn bán hàng"
+
+#. module: a1_sale_stock
+#: model:ir.model,name:a1_sale_stock.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Dòng đơn bán hàng"
+
+#. module: a1_sale_stock
+#: model:ir.model.fields,field_description:a1_sale_stock.field_stock_picking__x_shipping_address
+msgid "Shipping address"
+msgstr "Địa chỉ giao hàng"
+
+#. module: a1_sale_stock
+#: model_terms:ir.ui.view,arch_db:a1_sale_stock.view_sales_order_filter_inherit
+msgid "To Invoice"
+msgstr "Cần xuất hóa đơn"
+
+#. module: a1_sale_stock
+#: model:ir.model,name:a1_sale_stock.model_stock_picking
+msgid "Transfer"
+msgstr "Lệnh chuyển hàng"
+
+#. module: a1_sale_stock
+#: model:ir.actions.act_window,name:a1_sale_stock.action_undeliveried_order_reminder
+#: model:ir.ui.menu,name:a1_sale_stock.menu_reminder_undeliveried_order
+msgid "Undeliveried Order"
+msgstr "Đơn hàng bán cần xuất kho"
+
+#. module: a1_sale_stock
+#. odoo-python
+#: code:addons/a1_sale_stock/models/stock_move.py:0
+#, python-format
+msgid "Please set Internal Voucher Outgoing Account for product category %s"
+msgstr " Vui lòng thiết lập tài khoản Giá vốn xuất bán liên công ty Voucher cho danh mục sản phẩm %s"
+
+#. module: a1_sale_stock
+#: model:ir.ui.menu,name:a1_sale_stock.menu_reminder_order_return_to_invoice
+msgid "Order Return to invoice"
+msgstr "Đơn hàng trả cần xuất hóa đơn"
+
+#. module: a1_sale_stock
+#: model_terms:ir.actions.act_window,help:a1_sale_stock.action_undeliveried_order_return_reminder
+msgid "Not any Undeliveried Return Order were made yet!"
+msgstr "Không có đơn hàng trả nào cần nhập kho!"
+
+#. module: a1_sale_stock
+#: model:ir.actions.act_window,name:a1_sale_stock.action_undeliveried_order_return_reminder
+#: model:ir.ui.menu,name:a1_sale_stock.menu_reminder_undeliveried_return_order
+msgid "Undeliveried Return Order"
+msgstr "Đơn hàng trả cần nhập kho"
+
+#. module: a1_sale_stock
+#: model:ir.actions.act_window,name:a1_sale_stock.action_orders_return_to_invoice
+msgid "Orders Return to Invoice"
+msgstr "Đơn hàng trả cần xuất hóa đơn"

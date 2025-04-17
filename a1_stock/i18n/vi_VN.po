@@ -1,0 +1,1031 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* a1_stock
+# 	* stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20241007\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-07 03:34+0000\n"
+"PO-Revision-Date: 2025-02-07 03:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/models/stock_picking.py:0
+#, python-format
+msgid ""
+"\n"
+"---\n"
+"Product: %s\n"
+"Demand: %s\n"
+"Quantity: %s"
+msgstr ""
+"---\n"
+" Sản phẩm: %s\n"
+" Nhu cầu: %s\n"
+" Số lượng: %s"
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/models/stock_move.py:0
+#, python-format
+msgid " already exists."
+msgstr " đã tồn tại."
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/wizard/a1_stock_assign_serial_numbers.py:0
+#: code:addons/a1_stock/wizard/a1_stock_assign_serial_numbers.py:0
+#, python-format
+msgid " in "
+msgstr " trong "
+
+#. module: a1_stock
+#: model:ir.actions.report,print_report_name:a1_stock.anna_print_stock_picking_ingoing
+#: model:ir.actions.report,print_report_name:a1_stock.anna_print_stock_picking_warehouse_ingoing
+msgid "'Stock Picking Ingoing Report - %s' % (object.name).replace('/', '')"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.actions.report,print_report_name:a1_stock.anna_print_stock_picking_outgoing
+#: model:ir.actions.report,print_report_name:a1_stock.anna_print_stock_picking_warehouse_outgoing
+msgid "'Stock Picking Outgoing - %s' % (object.name).replace('/', '')"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "(Ký, họ tên)"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "(Ký, họ tên, đóng dấu)"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid ""
+"- <span>Theo hóa đơn số</span>\n"
+"                                        <span>..........</span>\n"
+"                                        <span>ngày</span>\n"
+"                                        <span>..........</span>\n"
+"                                        <span>tháng</span>\n"
+"                                        <span>..........</span>\n"
+"                                        <span>năm</span>\n"
+"                                        <span>..........</span>\n"
+"                                        <span>của</span>\n"
+"                                        <span>..........</span>"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "- Họ tên người nhận hàng:"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "- Họ tên người:"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "- Lý do xuất kho:"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "- Nhập tại kho:"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid ""
+"- Số chứng từ gốc kèm theo:\n"
+"                                    <span>\n"
+"                                        ........................................................................................................................................\n"
+"                                    </span>"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "- Theo hóa đơn số"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+msgid "- Tổng số tiền (Viết bằng chữ):"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "- Tổng số tiền (Viết bằng chữ): ........................."
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "- Xuất tại kho (ngăn lô):"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "- Địa chỉ (bộ phận):"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid ""
+"<i style=\"font-size: 13px;\">Ngày<span>...</span> tháng <span>...</span>năm\n"
+"                                        <span>...\n"
+"                                        </span>\n"
+"                                    </i>"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid ""
+"<i style=\"margin: 0;\">(Ban hành theo Thông tư 133/2016/TT-BTC Ngày\n"
+"                                            26/08/2016 của Bộ\n"
+"                                            Tài chính)\n"
+"                                        </i>"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "<span class=\"span-1\">Địa điểm:</span>"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid "<strong>Cộng</strong>"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.act_a1_assign_serial_numbers
+msgid "A1 Assign Serial Numbers"
+msgstr "Gán serial cho sản phẩm"
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.act_a1_choose_serial_numbers
+msgid "A1 Choose Serial Numbers"
+msgstr "Chọn serial để xuất kho"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_assign_serial__x_a1_stock_assign_id
+msgid "A1 Stock Assign Serial"
+msgstr "Chọn serial"
+
+#. module: a1_stock
+#: model:ir.model,name:a1_stock.model_a1_stock_assign_serial
+msgid "A1 Stock Assign Serial Numbers"
+msgstr "Gán serial cho sản phẩm"
+
+#. module: a1_stock
+#: model:ir.actions.report,name:a1_stock.anna_print_stock_picking_ingoing
+#: model:ir.actions.report,name:a1_stock.anna_print_stock_picking_warehouse_ingoing
+msgid "Accountant Print Stock Picking Ingoing"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.actions.report,name:a1_stock.anna_print_stock_picking_outgoing
+#: model:ir.actions.report,name:a1_stock.anna_print_stock_picking_warehouse_outgoing
+msgid "Accountant Print Stock Picking Outgoing"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_choose_serial_form
+msgid "Add"
+msgstr "Thêm"
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/wizard/a1_stock_assign_serial_numbers.py:0
+#, python-format
+msgid "All serial numbers have been assigned."
+msgstr "Tất cả sản phẩm đã được gán seri"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__assign_serial_ids
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_assign_serial_form
+#: model_terms:ir.ui.view,arch_db:a1_stock.view_picking_form
+msgid "Assign Serial Numbers"
+msgstr "Chọn serial"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_move__free_qty_today
+msgid "Available quantity"
+msgstr "Tồn kho khả dụng"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_assign_serial_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.view_picking_form
+msgid "Choose Serial Numbers"
+msgstr "Chọn serial để xuất kho"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_choose_serial_form
+msgid "Choose serials"
+msgstr "Chọn serial"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_assign_serial_form
+msgid "Clear current lot id"
+msgstr "Xóa số lô/seri hiện tại"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_view_form
+msgid "Close"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.stock_warehouse_view_search_a1_inherit
+msgid "Company"
+msgstr "Công ty"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__create_date
+msgid "Created on"
+msgstr "Tạo vào"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.view_stock_picking_tree_inherit
+msgid "Creation Date"
+msgstr "Ngày tạo phiếu"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid ""
+"Có\n"
+"                                                <span>156</span>"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid ""
+"Có\n"
+"                                                <span>331</span>"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_move__name
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_move__x_free_qty
+msgid "Free quantity"
+msgstr "Tồn kho khả dụng"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_assign_serial__x_from_serials_number
+msgid "From Serials Number"
+msgstr "Từ số"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_assign_serial_form
+msgid "Generate serials"
+msgstr "Tạo serial"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "Giám đốc"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.stock_warehouse_view_search_a1_inherit
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__id
+msgid "ID"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.popup_print_stock_picking_action
+msgid "In phiếu"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.action_internal_stock_picking_line_to_validate_reminder
+msgid "Internal picking line to validate"
+msgstr "Chi tiết lệnh chuyển hàng nội bộ cần xác nhận"
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.internal_picking_to_validate_reminder_action
+#: model:ir.ui.menu,name:a1_stock.menu_internal_stock_to_validate
+msgid "Internal picking to validate"
+msgstr "Lệnh chuyển hàng nội bộ cần xác nhận"
+
+#. module: a1_stock
+#: model:ir.ui.menu,name:a1_stock.menu_internal_stock_move_to_validate
+msgid "Internal stock move to validate"
+msgstr "Chi tiết lệnh chuyển hàng nội bộ cần xác nhận"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "Kế toán trường"
+msgstr ""
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/models/stock_picking.py:0
+#, python-format
+msgid "Language not supported"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model,name:a1_stock.model_stock_lot
+msgid "Lot/Serial"
+msgstr "Lô/sê-ri"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__move_id
+msgid "Move"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__move_line_ids
+msgid "Move Lines"
+msgstr "Sản phẩm đã gán seri"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_assign_serial_form
+msgid "Move line ids"
+msgstr "Các sản phẩm của phiếu điều chuyển"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid "Mã số"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "Mẫu số: 01 - VT"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "Mẫu số: 02 - VT"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "Người giao hàng"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "Người lập phiếu"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "Người nhận hàng"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.actions.act_window,help:a1_stock.action_internal_stock_picking_line_to_validate_reminder
+#: model_terms:ir.actions.act_window,help:a1_stock.action_stock_picking_line_to_delivery_reminder
+#: model_terms:ir.actions.act_window,help:a1_stock.action_stock_picking_line_to_receipt_reminder
+msgid "No stock move were made yet!"
+msgstr "Chưa có sản phẩm nào được chuyển đi!"
+
+#. module: a1_stock
+#: model_terms:ir.actions.act_window,help:a1_stock.internal_picking_to_validate_reminder_action
+#: model_terms:ir.actions.act_window,help:a1_stock.outdate_internal_picking_to_validate_reminder_action
+#: model_terms:ir.actions.act_window,help:a1_stock.outdate_picking_to_delivery_reminder_action
+#: model_terms:ir.actions.act_window,help:a1_stock.outdate_picking_to_receipt_reminder_action
+#: model_terms:ir.actions.act_window,help:a1_stock.picking_to_delivery_reminder_action
+#: model_terms:ir.actions.act_window,help:a1_stock.picking_to_receipt_reminder_action
+msgid "No stock picking found. Let's create one!"
+msgstr "Không tìm thấy lệnh chuyển hàng. Hãy tạo một lệnh chuyển hàng!"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__no_serial_amount
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_assign_serial_form
+msgid "None serial quantity"
+msgstr "Số lượng chưa có seri"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_assign_serial__x_number_of_character
+msgid "Number of Character"
+msgstr "Số lượng ký tự"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid ""
+"Nợ\n"
+"                                                <span>156</span>"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid ""
+"Nợ\n"
+"                                                <span>632</span>"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.outdate_internal_picking_to_validate_reminder_action
+#: model:ir.ui.menu,name:a1_stock.outdate_menu_internal_stock_to_validate
+msgid "Outdate internal picking to validate"
+msgstr "Lệnh chuyển hàng nội bộ quá hạn"
+
+#. module: a1_stock
+#: model:ir.ui.menu,name:a1_stock.menu_stock_reminder_outdate
+msgid "Outdate picking reminder"
+msgstr "Nhắc nhở lệnh chuyển hàng quá hạn"
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.outdate_picking_to_delivery_reminder_action
+#: model:ir.ui.menu,name:a1_stock.outdate_menu_stock_to_delivery
+msgid "Outdate picking to delivery"
+msgstr "Lệnh chuyển hàng quá hạn cần giao"
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.outdate_picking_to_receipt_reminder_action
+#: model:ir.ui.menu,name:a1_stock.menu_outdate_stock_to_receipt
+msgid "Outdate picking to receipt"
+msgstr "Lệnh chuyển hàng quá hạn cần nhập kho"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "PHIẾU NHẬP KHO"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "PHIẾU XUẤT KHO"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_move__x_origin
+msgid "PO Origin"
+msgstr "Chứng từ gốc"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.stock_warehouse_view_search_a1_inherit
+msgid "Partner"
+msgstr "Địa chỉ"
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.action_stock_picking_line_to_delivery_reminder
+msgid "Picking line to delivery"
+msgstr "Chi tiết lệnh chuyển hàng cần giao"
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.action_stock_picking_line_to_receipt_reminder
+msgid "Picking line to receipt"
+msgstr "Chi tiết lệnh chuyển hàng cần nhập kho"
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.picking_to_delivery_reminder_action
+#: model:ir.ui.menu,name:a1_stock.menu_stock_to_delivery
+msgid "Picking to delivery"
+msgstr "Lệnh chuyển hàng cần giao"
+
+#. module: a1_stock
+#: model:ir.actions.act_window,name:a1_stock.picking_to_receipt_reminder_action
+#: model:ir.ui.menu,name:a1_stock.menu_stock_to_receipt
+msgid "Picking to receipt"
+msgstr "Lệnh chuyển hàng cần nhập kho"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.view_picking_form
+msgid "Print"
+msgstr "In phiếu"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_view_form
+msgid "Print Delivery (Accounting)"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_view_form
+msgid "Print Delivery (Warehouse)"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_view_form
+msgid "Print Receive (Accounting)"
+msgstr "In phiếu (Kế toán)"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_view_form
+msgid "Print Receive (Warehouse)"
+msgstr "In phiếu (Kho)"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__product_id
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_assign_serial_form
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_move__x_default_code
+msgid "Product Default Code"
+msgstr "Mã nội bộ"
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/models/stock_picking.py:0
+#, python-format
+msgid "Quantity must be less than or equal to the demand of the product.\n"
+msgstr "Số lượng phải nhỏ hơn hoặc bằng nhu cầu của sản phẩm.\n"
+
+#. module: a1_stock
+#: model:ir.model.fields,help:a1_stock.field_stock_move__x_origin
+msgid "Reference of the document"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.ui.menu,name:a1_stock.menu_stock_reminder_management
+msgid "Reminders"
+msgstr "Nhắc nhở"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid "STT"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_move__x_scheduled_date
+msgid "Scheduled Date"
+msgstr "Ngày nhận hàng dự kiến"
+
+#. module: a1_stock
+#: model:ir.model.fields,help:a1_stock.field_stock_move__x_scheduled_date
+msgid ""
+"Scheduled time for the first part of the shipment to be processed. Setting "
+"manually a value here would set it as expected date for all the stock moves."
+msgstr ""
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/wizard/a1_stock_assign_serial_numbers.py:0
+#, python-format
+msgid "Serial number is duplicated."
+msgstr "Số serial bị trùng."
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_warehouse__code
+msgid "Short Name"
+msgstr "Tên viết tắt"
+
+#. module: a1_stock
+#: model:ir.model.fields,help:a1_stock.field_stock_warehouse__code
+msgid "Short name used to identify your warehouse"
+msgstr "Tên viết tắt được sử dụng để xác định kho hàng"
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/wizard/a1_stock_assign_serial_numbers.py:0
+#, python-format
+msgid "Sold out product with these serial: %s"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model,name:a1_stock.model_stock_assign_serial
+msgid "Stock Assign Serial Numbers"
+msgstr "Số serial được dùng cho tồn kho"
+
+#. module: a1_stock
+#: model:ir.model,name:a1_stock.model_stock_move
+msgid "Stock Move"
+msgstr "Điều chuyển tồn kho"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.stock_move_reminder_pivot
+msgid "Stock move"
+msgstr "Dịch chuyển tồn kho"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.stock_move_reminder_graph
+msgid "Stock move line"
+msgstr "Chi tiết dịch chuyển tồn kho"
+
+#. module: a1_stock
+#: model:ir.ui.menu,name:a1_stock.menu_stock_move_reminder
+msgid "Stock move reminder"
+msgstr "Nhắc nhở dịch chuyển tồn kho"
+
+#. module: a1_stock
+#: model:ir.ui.menu,name:a1_stock.menu_stock_move_to_delivery
+msgid "Stock move to delivery"
+msgstr "Chi tiết lệnh chuyển hàng cần giao"
+
+#. module: a1_stock
+#: model:ir.ui.menu,name:a1_stock.menu_stock_move_to_receipt
+msgid "Stock move to receipt"
+msgstr "Chi tiết lệnh chuyển hàng cần nhập kho"
+
+#. module: a1_stock
+#: model:ir.ui.menu,name:a1_stock.menu_stock_picking_reminder
+msgid "Stock picking reminder"
+msgstr "Nhắc nhở lệnh chuyển hàng"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid "Số lượng"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "Số:"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model.fields,help:a1_stock.field_stock_move__free_qty_today
+msgid ""
+"The information field used to enter the available inventory quantity of the "
+"selected product is displayed directly on the order."
+msgstr ""
+"Hiển thị số lượng tồn kho khả dụng của sản phẩm được chọn trực tiếp trên đơn"
+" đặt hàng."
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/wizard/a1_stock_assign_serial_numbers.py:0
+#: code:addons/a1_stock/wizard/a1_stock_assign_serial_numbers.py:0
+#, python-format
+msgid ""
+"The number of Serial Numbers to generate cannot be greater than None series "
+"amount."
+msgstr ""
+"Số lượng số serial cần tạo không thể lớn hơn số lượng số sản phẩm không có "
+"serial."
+
+#. module: a1_stock
+#. odoo-python
+#: code:addons/a1_stock/wizard/stock_assign_serial_numbers.py:0
+#, python-format
+msgid ""
+"The number of characters must be greater than sum of len 'to serials number'"
+" and len 'first serials number'."
+msgstr ""
+"Số lượng ký tự của số serial phải lớn hơn tổng số ký tự của 'Số lô', 'từ "
+"số', 'đến số'."
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+msgid "Theo chứng từ"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid "Thành tiền"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_outgoing_template
+msgid "Thủ kho"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+msgid "Thực nhập"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid "Thực xuất"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_assign_serial__x_to_serials_number
+msgid "To Serials Number"
+msgstr "Đến số"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_stock_picking__x_total_quantity
+msgid "Total Quantity"
+msgstr "Tổng số lượng"
+
+#. module: a1_stock
+#: model:ir.model.fields,field_description:a1_stock.field_a1_stock_assign_serial__assign_serial_amount
+#: model_terms:ir.ui.view,arch_db:a1_stock.a1_stock_assign_serial_form
+msgid "Total serial quantity"
+msgstr "Số lượng tạo"
+
+#. module: a1_stock
+#: model:ir.model,name:a1_stock.model_stock_picking
+msgid "Transfer"
+msgstr "Lệnh chuyển hàng"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid ""
+"Tên, nhãn hiệu, quy cách, phẩm chất vật tư, dụng cụ sản phẩm,\n"
+"                                hàng hóa"
+msgstr ""
+
+#. module: a1_stock
+#: model:ir.model,name:a1_stock.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Kho hàng"
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid "Yêu cầu"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "của"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "ngày"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "năm"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_view_form
+msgid "print_stock_picking_form"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.print_stock_picking_warehouse_ingoing_template
+msgid "tháng"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid "Đơn giá"
+msgstr ""
+
+#. module: a1_stock
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_outgoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_ingoing_template
+#: model_terms:ir.ui.view,arch_db:a1_stock.anna_print_stock_picking_warehouse_outgoing_template
+msgid "Đơn vị tính"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_backorder_confirmation
+msgid "Backorder creation"
+msgstr "Tạo đơn hàng chậm trễ"
+
+#. module: stock
+#: model:ir.actions.act_window,name:stock.action_picking_tree_backorder
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
+msgid "Backorders"
+msgstr "Đơn hàng chậm trễ"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_picking_type__count_picking_backorders
+msgid "Count Picking Backorders"
+msgstr "Lấy hàng theo số lượng Đơn hàng chậm trễ"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_picking_type__create_backorder
+#: model_terms:ir.ui.view,arch_db:stock.view_backorder_confirmation
+msgid "Create Backorder"
+msgstr "Tạo đơn hàng chậm trễ"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_backorder_confirmation
+msgid ""
+"Create a backorder if you expect to process the remaining\n"
+"                            products later. Do not create a backorder if you will not\n"
+"                            process the remaining products."
+msgstr ""
+"Tạo đơn hàng chậm trễ nếu bạn dự kiến sẽ xử lý các sản phẩm\n"
+"                          còn lại sau. Không tạo đơn hàng chậm trễ nếu bạn không\n"
+"                          xử lý các sản phẩm còn lại."
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_form_editable
+msgid "Available Quantity"
+msgstr "Số lượng khả dụng"
+
+#. module: a1_stock
+#: model:ir.model,name:a1_stock.model_stock_warehouse
+#: model:ir.model.fields,field_description:a1_stock.field_stock_picking__x_warehouse_internal_id
+msgid "Warehouse"
+msgstr "Kho hàng"
+
+#. module: uom
+#: model:ir.model.fields,field_description:uom.field_uom_category__name
+msgid "Unit of Measure Category"
+msgstr "Danh mục đơn vị tính"
+
+#. module: stock
+#: model:ir.model,name:stock.model_stock_backorder_confirmation
+msgid "Backorder Confirmation"
+msgstr "Xác nhận đơn hàng chậm trễ"
+
+#. module: stock
+#: model:ir.model,name:stock.model_stock_backorder_confirmation_line
+msgid "Backorder Confirmation Line"
+msgstr "Dòng xác nhận đơn hàng chậm trễ"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_backorder_confirmation__backorder_confirmation_line_ids
+msgid "Backorder Confirmation Lines"
+msgstr "Chi tiết xác nhận đơn hàng chậm trễ"
+
+#. module: stock
+#. odoo-python
+#: code:addons/stock/models/stock_picking.py:0
+#, python-format
+msgid "Create Backorder?"
+msgstr "Tạo đơn hàng chậm trễ?"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_backorder_confirmation
+msgid "No Backorder"
+msgstr "Không có đơn hàng chậm trễ"
+
+#. module: stock
+#. odoo-python
+#: code:addons/stock/models/stock_picking.py:0
+#, python-format
+msgid "The backorder %s has been created."
+msgstr "Đơn hàng chậm trễ %s đã được tạo."
+
+#. module: stock
+#: model:ir.model.fields,help:stock.field_stock_move__product_uom_qty
+msgid ""
+"This is the quantity of product that is planned to be moved.Lowering this "
+"quantity does not generate a backorder.Changing this quantity on assigned "
+"moves affects the product reservation, and should be done with care."
+msgstr ""
+"Đây là số lượng sản phẩm được lên kế hoạch dịch chuyển. Việc giảm số lượng "
+"này sẽ không tạo ra một đơn hàng chậm trễ. Tuy nhiên, việc thay đổi số "
+"lượng này trên những dịch chuyển đã chỉ định sẽ ảnh hưởng đến dự trữ sản "
+"phẩm và cần được thực hiện cẩn thận."
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_backorder_confirmation_line__to_backorder
+msgid "To Backorder"
+msgstr "Cần lập đơn hàng chậm trễ"
+
+#. module: stock
+#: model:ir.model.fields,help:stock.field_stock_picking_type__create_backorder
+msgid ""
+"When validating a transfer:\n"
+" * Ask: users are asked to choose if they want to make a backorder for remaining products\n"
+" * Always: a backorder is automatically created for the remaining products\n"
+" * Never: remaining products are cancelled"
+msgstr ""
+"Khi xác nhận một lệnh chuyển hàng:\n"
+"* Hỏi: người dùng được chọn nếu họ muốn tạo đơn hàng chậm trễ cho các sản phẩm còn lại\n"
+"* Luôn luôn: đơn hàng chậm trễ được tạo tự động cho các sản phẩm còn lại\n"
+"* Không bao giờ: các sản phẩm còn lại sẽ bị hủy"
+
+#. module: stock
+#. odoo-python
+#: code:addons/stock/models/stock_move.py:0
+#, python-format
+msgid ""
+"You cannot move the same package content more than once in the same transfer"
+" or split the same package into two location."
+msgstr ""
+"Bạn không thể dịch chuyển cùng một kiện hàng nhiều lần trong cùng một lệnh "
+"chuyển hàng hàng hoặc tách một kiện hàng sang hai vị trí khác nhau."
+
+#. module: stock
+#. odoo-python
+#: code:addons/stock/models/stock_rule.py:0
+#: model:ir.model.fields,field_description:stock.field_stock_move__location_id
+#: model:ir.model.fields,field_description:stock.field_stock_move_line__picking_location_id
+#: model:ir.model.fields,field_description:stock.field_stock_picking__location_id
+#: model:ir.model.fields,field_description:stock.field_stock_rule__location_src_id
+#: model:ir.model.fields,field_description:stock.field_stock_scrap__location_id
+#: model_terms:ir.ui.view,arch_db:stock.view_move_search
+#, python-format
+msgid "Source Location"
+msgstr "Địa điểm nguồn"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_quant_relocate__dest_location_id
+msgid "Dest Location"
+msgstr "Địa điểm đích"
+
+#. module: stock
+#. odoo-python
+#: code:addons/stock/models/stock_rule.py:0
+#: model:ir.model.fields,field_description:stock.field_stock_move__location_dest_id
+#: model:ir.model.fields,field_description:stock.field_stock_move_line__picking_location_dest_id
+#: model:ir.model.fields,field_description:stock.field_stock_picking__location_dest_id
+#: model:ir.model.fields,field_description:stock.field_stock_rule__location_dest_id
+#: model_terms:ir.ui.view,arch_db:stock.view_move_search
+#, python-format
+msgid "Destination Location"
+msgstr "Địa điểm đích"

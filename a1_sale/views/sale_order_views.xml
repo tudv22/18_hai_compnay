@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_tree_a1_inherit" model="ir.ui.view">
+            <field name="name">sale.order.tree.form.a1.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='commitment_date'][1]" position="after">
+                    <field name="commitment_date" widget="remaining_days" optional="hide"/>
+                </xpath>
+                <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d']" position="after">
+                    <button name="action_btn_create_invoices"
+                            type="object"
+                            string="Create Invoices"
+                            class="btn-secondary"/>
+                </xpath>
+                <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_order_form_a1_inherit" model="ir.ui.view">
+            <field name="name">a1.sale.order.form.a1.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority" eval="1000"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='action_preview_sale_order']" position="replace">
+                     <button class="oe_highlight" invisible="state != 'sale'" name="action_preview_print_so"
+                            string="Print report" type="object"/>
+                </xpath>
+                <xpath expr="//div[hasclass('o_td_label')][1]" position="before">
+                    <field name="user_id" options="{'no_create': True, 'no_edit':True}" readonly="state != 'draft'"/>
+                    <field name="x_department_id" options="{'no_create': True, 'no_edit':True}"
+                           readonly="state != 'draft'"/>
+                    <field name="x_is_variation_grid_entry" invisible="1"/>
+                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="carrier_tracking_ref"/>
+                    <field name="source_id"/>
+                    <field name="x_source_details"/>
+                    <field name="x_source_activity"/>
+                    <field name="x_is_cod"/>
+                    <field name="x_carrier_partner_id" invisible="not x_is_cod" required="x_is_cod == True"/>
+                    <label for="currency_id"/>
+                    <div name="x_exchange_rate_div" class="o_row">
+                        <field name="currency_id" required="1"/>
+                        <label for="x_exchange_rate"/>
+                        <field name="x_exchange_rate" options="{'currency_field': 'currency_id'}"
+                               readonly="currency_id == x_company_currency_id"/>
+                        <field name="x_company_currency_id" invisible="1"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='x_department_id']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('o_td_label')][1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('o_td_label')][2]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_order'][1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_order'][2]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='partner_details']//field[@name='partner_invoice_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='partner_details']//field[@name='partner_shipping_id']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_id'][1]" position="after">
+                    <field name="x_mobile" readonly="1" force_save="1"/>
+                    <field name="x_company_name"/>
+                    <field name="x_tax_code" readonly="1"/>
+                    <field name="x_invoice_address"/>
+                    <field name="x_shipping_address"/>
+                    <field name="origin" invisible="not origin"/>
+                    <div class="o_td_label" groups="base.group_no_one" invisible="state in ['sale', 'cancel']">
+                        <label for="date_order" string="Quotation Date"/>
+                    </div>
+                    <field name="date_order" nolabel="1" groups="base.group_no_one"
+                           invisible="state in ['sale', 'cancel']"
+                           readonly="state in ['cancel', 'sale']"/>
+                    <div class="o_td_label" invisible="state in ['draft', 'sent']">
+                        <label for="date_order" string="Order Date"/>
+                    </div>
+                    <field name="date_order" invisible="state in ['draft', 'sent']"
+                           readonly="state in ['cancel', 'sale']"
+                           nolabel="1"/>
+                    <field name="validity_date" position="move"/>
+                    <field name="payment_term_id" position="move"/>
+                    <field name="invoice_status" invisible="state != 'sale'" groups="base.group_no_one"/>
+                </xpath>
+                <xpath expr="//group[@name='sale_info']//field[@name='invoice_status']" position="after">
+                    <field name="partner_invoice_id"
+                           string="Contact invoice"
+                           groups="account.group_delivery_invoice_address"
+                           context="{'default_type':'invoice', 'show_address': False, 'show_vat': False}"
+                           readonly="state == 'cancel' or locked"/>
+                    <field name="partner_shipping_id"
+                           string="Contact delivery"
+                           groups="account.group_delivery_invoice_address"
+                           context="{'default_type':'delivery', 'show_address': False, 'show_vat': False}"
+                           readonly="state == 'cancel' or locked"/>
+                </xpath>
+                <xpath expr="//group[@name='sale_reporting']//field[@name='origin']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sale_order_template_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sale_reporting']//field[@name='source_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sale_reporting']//field[@name='medium_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sale_shipping']//field[@name='commitment_date']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sale_shipping']//label[@for='commitment_date']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sale_info']//field[@name='invoice_status']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sales_person']//field[@name='user_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sales_person']//field[@name='company_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']//list//field[@name='product_template_id']"
+                       position="attributes">
+                    <attribute name="column_invisible">parent.x_is_variation_grid_entry == False</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']//list//field[@name='product_id']" position="attributes">
+                    <attribute name="column_invisible">parent.x_is_variation_grid_entry == True</attribute>
+                    <attribute name="optional">show</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="sale_order_tree_a1_inherit" model="ir.ui.view">
+            <field name="name">sale.order.tree.form.a1.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="x_department_id" optional="hide"/>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="create_uid" optional="hide"/>
+                    <field name="create_date" optional="hide"/>
+                </xpath>
+                <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d']" position="after">
+                    <button name="action_btn_create_invoices"
+                            type="object"
+                            string="Create Invoices"
+                            class="btn-secondary"/>
+                </xpath>
+                <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!--       ACTION        -->
+
+        <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+            <field name="domain">[('x_type', '=', 'sale')]</field>
+            <field name="context">{'search_default_draft': 1}</field>
+        </record>
+
+        <!--     ACTIONS (SERVER)-->
+
+        <record id="model_sale_order_action_confirm_so" model="ir.actions.server">
+            <field name="name">Create Order</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">action = records.action_confirm_so()</field>
+        </record>
+
+        <record id="model_sale_order_action_create_invoices" model="ir.actions.server">
+            <field name="name">Create Invoices</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">action = records.action_create_invoices()</field>
+        </record>
+
+        <record id="sale.action_view_sale_advance_payment_inv" model="ir.actions.act_window">
+            <field name="name">Create invoices</field>
+            <field name="res_model">sale.advance.payment.inv</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_view_types">list</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,224 @@
+<odoo>
+    <data>
+        <record id="report_paperformat_stock_transfer_request" model="report.paperformat">
+            <field name="name">A4 stock report</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="dpi">96</field>
+        </record>
+
+        <record id="anna_print_stock_transfer_request" model="ir.actions.report">
+            <field name="name">Accountant Print Stock Transfer Request</field>
+            <field name="model">stock.transfer.request</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">a1_stock_transfer_request.anna_print_stock_transfer_request_template</field>
+            <field name="report_file">a1_stock_transfer_request.anna_print_stock_transfer_request_template</field>
+            <field name="print_report_name">'Stock Transfer Request Report - %s' % (object.name).replace('/', '')
+            </field>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="report_paperformat_stock_transfer_request"/>
+        </record>
+
+        <template id="print_stock_transfer_request_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    </head>
+                    <style>
+                        .font13 {
+                        font-size: 13px;
+                        }
+                        .x_bold {
+                        font-weight: bold;
+                        }
+                        .x_center {
+                        text-align: center;
+                        }
+                        .x_right {
+                        text-align: right;
+                        }
+                        .x_italic {
+                        font-style: italic;
+                        }
+                        p {
+                        margin: 0;
+                        text-align: left;
+                        font-size: 13px;
+                        }
+                        .company-info {
+                            display: flex;
+                        }
+                        .company-logo img {
+                            width: 50px;
+                            height: auto;
+                        }
+                    </style>
+                    <body style="height: auto;">
+                        <div style="font-family: Times New Roman;">
+                            <div style="width: 100%; margin: 0 auto;font-family: Times New Roman; font-size: 13px;">
+                                <!-- Header -->
+                                <div style="display: table; width: 100%; margin-bottom: 20px;" >
+                                    <div style="display: table-cell; width: 50%; vertical-align: top;text-align: left;" class="col-8">
+                                        <div class="company-logo col-2">
+                                            <t t-if="user.company_id.logo">
+                                                <img t-att-src="'data:image/png;base64,' + user.company_id.logo.decode('utf-8')"/>
+                                            </t>
+                                        </div>
+                                        <div class="col-3">
+                                            <p style="margin: 0; font-weight: bold;white-space: nowrap;">
+                                                <span t-field="o.company_id.name"/>
+                                            </p>
+                                            <p style="margin: 0;white-space: nowrap;">
+                                                <span t-field="o.company_id.street"/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Title -->
+                                <div style="text-align: center; margin-bottom: 20px; font-family: Times New Roman;">
+                                    <h3 style="margin: 0;">PHIẾU XUẤT CHUYỂN KHO</h3>
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <p><span>Kho đích: </span>
+                                                <span>
+                                                    <t t-esc="(o.dest_warehouse_id.name or '')"/>
+                                                </span>
+                                            </p>
+                                            <br/>
+                                            <p><span>Địa điểm: </span>
+                                                <span>
+                                                    <t t-esc="o.dest_warehouse_id.partner_id.street or ''"/>
+                                                </span>
+                                            </p>
+                                            <br/>
+                                            <p><span>Kho nguồn: </span>
+                                                <span>
+                                                    <t t-esc="(o.transfer_warehouse_id.name or '')"/>
+                                                </span>
+                                            </p>
+                                            <br/>
+                                        </div>
+                                        <div class="col-10" style="text-align: left;">
+                                            <p style="margin: 0;">
+                                                <span><t t-esc="(o.create_date).strftime('Ngày: %d/%m/%Y')"/></span>
+                                            </p>
+                                            <p style="margin: 0;">Số:
+                                                <span><t t-esc="o.name"/></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: left">
+                                        <span style="font-size: 13px;">Người vận chuyển: ...........................................................</span>
+                                        <p>Diễn giải: ........................................................
+                                        </p>
+
+                                    </div>
+                                    <br/>
+                                    <t t-out="0"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-3 x_center">
+                                    <div class="font13 x_bold">Người lập phiếu</div>
+                                    <div class="x_italic">(Ký, họ tên)</div>
+                                </div>
+                                <div class="col-3 x_center">
+                                    <div class="font13 x_bold">Thủ kho xuất</div>
+                                    <div class="x_italic">(Ký, họ tên)</div>
+                                </div>
+                                <div class="col-3 x_center">
+                                    <div class="font13 x_bold">Người vận chuyển</div>
+                                    <div class="x_italic">(Ký, họ tên)</div>
+                                </div>
+                                <div class="col-3 x_center">
+                                    <div class="font13 x_bold">Thủ kho nhập</div>
+                                    <div class="x_italic">(Ký, họ tên)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </body>
+                </t>
+            </t>
+        </template>
+
+        <template id="anna_print_stock_transfer_request_template">
+            <t t-call="a1_stock_transfer_request.print_stock_transfer_request_template">
+                <t t-set="o" t-value="docs"/>
+                <style>
+                    thead, tbody, tfoot, tr, td, th {
+                    border: 1px solid;
+                    }
+                    .x_center {
+                    text-align: center;
+                    }
+                    .x_right {
+                    text-align: right;
+                    }
+                </style>
+                <table border="1"
+                       style="border-collapse: collapse; text-align: center;vertical-align: middle;font-size:13px">
+                    <thead>
+                        <tr>
+                            <th style="width: 120px;vertical-align: middle"><b>Mã hàng</b></th>
+                            <th style="width: 240px;vertical-align: middle"><b>Tên hàng</b></th>
+                            <th style="width: 120px;vertical-align: middle"><b>Xuất tại kho</b></th>
+                            <th style="width: 120px;vertical-align: middle"><b>Nhập tại kho</b></th>
+                            <th style="width: 120px;vertical-align: middle"><b>Mã quy cách</b></th>
+                            <th style="width: 120px;vertical-align: middle"><b>ĐVT</b></th>
+                            <th style="width: 120px;vertical-align: middle"><b>Số lượng</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="o.sudo().request_line_ids" t-as="line">
+                            <tr>
+                                <td style="vertical-align: middle">
+                                    <t t-esc="line.product_id.default_code"/>
+                                </td>
+                                <td style="vertical-align: middle">
+                                    <span t-field="line.product_id.display_name"/>
+                                </td>
+                                <td style="vertical-align: middle">
+                                    <span t-field="line.transfer_warehouse_id.name"/>
+                                </td>
+                                <td style="vertical-align: middle">
+                                    <span t-field="line.dest_warehouse_id.name"/>
+                                </td>
+                                <td style="vertical-align: middle">
+                                </td>
+                                <td style="vertical-align: middle">
+                                    <span t-field="line.uom_id.name"/>
+                                </td>
+                                <td class="x_right" style="vertical-align: middle; text-align: center">
+                                    <span t-field="line.export_qty"/>
+                                </td>
+                            </tr>
+                        </t>
+                        <tr>
+
+                            <td style="vertical-align: middle" colspan="6">
+                                <strong>Cộng</strong>
+                            </td>
+                            <td class="x_right" style="vertical-align: middle; text-align: center">
+                                <strong>
+                                    <t t-esc="round(sum([l.export_qty for l in o.sudo().request_line_ids]),2)"/>
+                                </strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </t>
+        </template>
+    </data>
+</odoo>
+

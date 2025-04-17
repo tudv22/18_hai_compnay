@@ -1,0 +1,308 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* a1_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-27 03:37+0000\n"
+"PO-Revision-Date: 2025-03-27 03:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: a1_purchase
+#: model:ir.ui.menu,name:a1_purchase.menu_purchase_reminder_management
+msgid "Reminders"
+msgstr "Nhắc nhở"
+
+#. module: a1_purchase
+#: model:ir.ui.menu,name:a1_purchase.menu_purchase_to_receipt
+msgid "Purchase order to receipt"
+msgstr "Phiếu mua hàng cần nhập"
+
+#. module: a1_purchase
+#: model:ir.ui.menu,name:a1_purchase.menu_purchase_to_approve
+msgid "Purchase Order to approve"
+msgstr "Phiếu mua hàng cần duyệt"
+
+#. module: a1_purchase
+#: model:ir.ui.menu,name:a1_purchase.menu_purchase_line_to_receipt
+msgid "Purchase line to receipt"
+msgstr "Phiếu mua hàng sản phẩm"
+
+#. module: a1_purchase
+#: model:ir.ui.menu,name:a1_purchase.menu_purchase_out_Date
+msgid "Out date purchase order"
+msgstr "Phiếu mua hàng hết hạn"
+
+#. module: a1_purchase
+#: model:ir.ui.menu,name:a1_purchase.menu_purchase_to_invoice
+msgid "Purchase order to invoice"
+msgstr "Phiếu mua hàng cần xuất hóa đơn"
+
+#. module: a1_purchase
+#: model:ir.actions.report,print_report_name:a1_purchase.action_print_purchase_order
+msgid "'Purchase order - %s' % (object.name).replace('/', '')"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "(Ký, họ tên)"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "(Ký, họ tên, đóng dấu)"
+msgstr ""
+
+#. module: a1_purchase
+#: model:ir.model.fields,field_description:a1_purchase.field_purchase_order_line__x_user_id
+msgid "Buyer"
+msgstr "Người mua"
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.purchase_order_form_a1_inherit
+msgid "Clear tax lines"
+msgstr "Xóa thuế"
+
+#. module: a1_purchase
+#: model:ir.model.fields,field_description:a1_purchase.field_purchase_order__x_company_currency_id
+msgid "Company currency"
+msgstr "Tiền tệ của công ty"
+
+#. module: a1_purchase
+#: model:ir.model,name:a1_purchase.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Cộng tiền hàng:"
+msgstr ""
+
+#. module: a1_purchase
+#: model:ir.model.fields,field_description:a1_purchase.field_purchase_order__x_department_id
+msgid "Department"
+msgstr "Phòng ban"
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Diễn giải"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid ""
+"Diễn giải:\n"
+"                                            ________________________"
+msgstr ""
+
+#. module: a1_purchase
+#: model:ir.model.fields,field_description:a1_purchase.field_purchase_order__x_exchange_rate
+msgid "Exchange Rate"
+msgstr "Tỷ giá"
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid ""
+"Fax:\n"
+"                                            ______________________"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Giám đốc"
+msgstr ""
+
+#. module: a1_purchase
+#. odoo-python
+#: code:addons/a1_purchase/models/purchase_order.py:0
+msgid "Import Template for PO"
+msgstr "Tải xuống mẫu Đơn mua hàng"
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Kế toán trưởng"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Loại tiền:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Mã hàng"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Mã số thuế:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Ngày giao hàng:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Ngày:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Người lập"
+msgstr ""
+
+#. module: a1_purchase
+#: model:ir.model.fields,field_description:a1_purchase.field_purchase_order_line__x_origin
+msgid "PO Origin"
+msgstr "Chứng từ gốc"
+
+#. module: a1_purchase
+#: model:ir.actions.report,name:a1_purchase.action_print_purchase_order
+msgid "Print Purchase Order"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.purchase_order_form_a1_inherit
+msgid "Print report"
+msgstr "In Đơn"
+
+#. module: a1_purchase
+#: model:ir.model.fields,field_description:a1_purchase.field_purchase_order_line__x_default_code
+msgid "Product Default Code"
+msgstr "Mã nội bộ"
+
+#. module: a1_purchase
+#: model:ir.model.fields.selection,name:a1_purchase.selection__purchase_order__x_type__purchase
+msgid "Purchase"
+msgstr "Mua hàng"
+
+#. module: a1_purchase
+#: model:ir.model,name:a1_purchase.model_purchase_order
+msgid "Purchase Order"
+msgstr "Đơn mua hàng"
+
+#. module: a1_purchase
+#: model:ir.model,name:a1_purchase.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Dòng đơn mua hàng"
+
+#. module: a1_purchase
+#: model:ir.model.fields,help:a1_purchase.field_purchase_order_line__x_origin
+msgid ""
+"Reference of the document that generated this purchase order request (e.g. a"
+" sales order)"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "STT"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Số lượng"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Số tiền viết bằng chữ:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Số điện thoại:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Số:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Thuế suất GTGT"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Thành tiền"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Tiền thuế GTGT:"
+msgstr ""
+
+#. module: a1_purchase
+#: model:ir.model.fields,field_description:a1_purchase.field_purchase_order__x_type
+msgid "Type"
+msgstr "Loại"
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Tên nhà cung cấp:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Tổng tiền thanh toán:"
+msgstr ""
+
+#. module: a1_purchase
+#: model:ir.model.fields,field_description:a1_purchase.field_purchase_order_line__x_partner_id
+msgid "Vendor"
+msgstr "Nhà cung cấp"
+
+#. module: a1_purchase
+#: model:ir.model.fields,help:a1_purchase.field_purchase_order_line__x_partner_id
+msgid "You can find a vendor by its Name, TIN, Email or Internal Reference."
+msgstr "Bạn có thể tìm nhà cung cấp theo Tên, MST, Email hoặc Tham chiếu nội bộ"
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "______________________"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Điều khoản thanh toán:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Đơn Mua Hàng"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Đơn giá"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_product_detail_template
+msgid "Đơn vị"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Địa chỉ:"
+msgstr ""
+
+#. module: a1_purchase
+#: model_terms:ir.ui.view,arch_db:a1_purchase.print_purchase_order_template
+msgid "Địa điểm giao hàng:"
+msgstr ""
+
+
+
+

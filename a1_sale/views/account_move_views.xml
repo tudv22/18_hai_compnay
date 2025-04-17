@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_move_form_inherit" model="ir.ui.view">
+        <field name="name">view.account.move.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_reverse']" position="after">
+                <button name="action_adjust_increase"
+                        type="object"
+                        string="Adjust increase"
+                        groups="account.group_account_invoice"
+                        invisible="move_type not in ('out_invoice', 'in_invoice') or state != 'posted'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem action="IO_stock_report_quantity_act"
+              id="IO_stock_report_quantity_menu"
+              name="IO stock report quantity"
+              parent="stock.menu_warehouse_report"
+              sequence="0"/>
+</odoo>

@@ -1,0 +1,360 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* a1_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20241001\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-20 02:54+0000\n"
+"PO-Revision-Date: 2025-03-20 02:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: a1_product
+#: model_terms:ir.ui.view,arch_db:a1_product.product_category_form_view
+msgid "Account Payable Voucher"
+msgstr "TÀI KHOẢN VOUCHER"
+
+#. module: a1_product
+#: model_terms:ir.ui.view,arch_db:a1_product.product_category_form_view
+msgid "Attribute Config"
+msgstr "Cấu hình thuộc tính"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category__x_attribute_config_ids
+msgid "Attribute config"
+msgstr "Cấu hình thuộc tính"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__barcode
+msgid "Barcode"
+msgstr "Mã vạch"
+
+#. module: a1_product
+#. odoo-python
+#: code:addons/a1_product/models/product_category.py:0
+#, python-format
+msgid ""
+"Can not change the attribute when existing product related to current "
+"category."
+msgstr "Không thể chỉnh sửa thuộc tính khi danh mục đã có sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_5
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_5
+msgid "Code of the vendor."
+msgstr "Phân đoạn thứ năm của mã sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category_attribute__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category_attribute__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: a1_product
+#. odoo-python
+#: code:addons/a1_product/models/product_product.py:0
+#: code:addons/a1_product/models/product_product.py:0
+#, python-format
+msgid "Default code '%s' already existed. Try again!"
+msgstr "Mã tham chiếu nội bộ '%s' đã tồn tại. Vui lòng kiểm tra lại!"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category_attribute__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_8
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_8
+msgid "Eighth segment of the product code."
+msgstr "Phân đoạn thứ tám của mã sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_1
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_1
+msgid "First segment of the product code."
+msgstr "Phân đoạn đầu tiên của mã sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category_attribute__id
+msgid "ID"
+msgstr ""
+
+#. module: a1_product
+#. odoo-python
+#: code:addons/a1_product/models/product_supplierinfo.py:0
+#, python-format
+msgid "Import Template for Vendor Pricelists"
+msgstr "Tải xuống mẫu nhập bảng giá nhà cung cấp"
+
+#. module: a1_product
+#. odoo-python
+#: code:addons/a1_product/models/product_attribute.py:0
+#, python-format
+msgid "Import Template for product attribute"
+msgstr "Tải xuống mẫu Thuộc tính sản phẩm"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__default_code
+msgid "Internal Reference"
+msgstr "Mã tham chiếu nội bộ"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category__x_internal_voucher_income_id
+msgid "Internal Voucher Income Account"
+msgstr "Tài khoản thu nhập voucher nội bộ"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category__x_internal_voucher_outgoing_warehouse_cost_id
+msgid "Internal voucher Outgoing Warehouse Cost Account"
+msgstr "Giá vốn xuất bán liên công ty Voucher"
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__barcode
+msgid "International Article Number used for product identification."
+msgstr "Mã số quốc tế được sử dụng để xác định sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category_attribute__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category_attribute__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: a1_product
+#: model:ir.model.constraint,message:a1_product.constraint_product_template_name_uniq
+msgid "Name must be unique!"
+msgstr "Tên phải là duy nhất!"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_nhanh_barcode
+msgid "Nhanh Barcode"
+msgstr "Mã vạch nhanh"
+
+#. module: a1_product
+#. odoo-python
+#: code:addons/a1_product/models/product_product.py:0
+#: model:ir.model.constraint,message:a1_product.constraint_product_product_x_nhanh_barcode_uniq
+#, python-format
+msgid "Nhanh barcode must be unique!"
+msgstr "Mã vạch nhanh phải là duy nhất!"
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_nhanh_barcode
+msgid "Nhanh barcode used for product identification."
+msgstr "Mã vạch nhanh được sử dụng để xác định sản phẩm của 'Nhanh'."
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_9
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_9
+msgid "Nine segment of the product code."
+msgstr "Phân đoạn thứ chín của mã sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_old_code
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_old_code
+msgid "Old code"
+msgstr "Mã cũ"
+
+#. module: a1_product
+#: model:ir.model,name:a1_product.model_product_pricelist_item
+msgid "Pricelist Rule"
+msgstr "Quy tắc bảng giá"
+
+#. module: a1_product
+#: model:ir.model,name:a1_product.model_product_template
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: a1_product
+#: model:ir.model,name:a1_product.model_product_attribute
+#: model:ir.model.fields,field_description:a1_product.field_product_category_attribute__product_attribute_id
+msgid "Product Attribute"
+msgstr "Thuộc tính sản phẩm"
+
+#. module: a1_product
+#: model:ir.model,name:a1_product.model_product_category_attribute
+msgid "Product Attribute Config Relation"
+msgstr "Liên kết cấu hình thuộc tính sản phẩm"
+
+#. module: a1_product
+#: model:ir.model,name:a1_product.model_product_category
+#: model:ir.model.fields,field_description:a1_product.field_product_category_attribute__product_category_id
+msgid "Product Category"
+msgstr "Danh mục sản phẩm"
+
+#. module: a1_product
+#: model:ir.model.constraint,message:a1_product.constraint_product_category_attribute_unique_category_attribute
+msgid "Product Category and Attribute must be unique."
+msgstr "Danh mục sản phẩm và thuộc tính phải là duy nhất."
+
+#. module: a1_product
+#: model:ir.model,name:a1_product.model_product_product
+msgid "Product Variant"
+msgstr "Biến thể sản phẩm"
+
+#. module: a1_product
+#. odoo-python
+#: code:addons/a1_product/models/product_product.py:0
+#, python-format
+msgid ""
+"Product attribute config in product category and product do not match: %s. "
+"Please check again!"
+msgstr ""
+"Thuộc tính trong Danh mục và sản phẩm đang không khớp: %s. Vui lòng kiểm tra"
+" lại!"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_product_size
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_product_size
+msgid "Product size"
+msgstr "Kích thước"
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_product_size
+#: model:ir.model.fields,help:a1_product.field_product_template__x_product_size
+msgid "Product size of the product."
+msgstr "Kích thước của sản phẩm"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_5
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_5
+msgid "Product's code of vendor"
+msgstr "Mã sản phẩm NCC"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_4
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_4
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_4
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_4
+msgid "Range of product"
+msgstr "Dòng sản phẩm"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category__x_property_account_return_id
+msgid "Refund Account"
+msgstr "Tài khoản trả hàng"
+
+#. module: a1_product
+#: model_terms:ir.ui.view,arch_db:a1_product.view_product_import_tax_inherit
+msgid "Regenerate default code"
+msgstr "Sinh mã nội bộ"
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_2
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_2
+msgid "Second segment of the product code."
+msgstr "Phân đoạn thứ hai của mã sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_1
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_1
+msgid "Segment 1"
+msgstr "Phân đoạn 1"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_10
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_10
+msgid "Segment 10"
+msgstr "Phân đoạn 10"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_2
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_2
+msgid "Segment 2"
+msgstr "Phân đoạn 2"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_3
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_3
+msgid "Segment 3"
+msgstr "Phân đoạn 3"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_6
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_6
+msgid "Segment 6"
+msgstr "Phân đoạn 6"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_7
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_7
+msgid "Segment 7"
+msgstr "Phân đoạn 7"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_8
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_8
+msgid "Segment 8"
+msgstr "Phân đoạn 8"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_content_9
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_content_9
+msgid "Segment 9"
+msgstr "Phân đoạn 9"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_category_attribute__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_7
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_7
+msgid "Seventh segment of the product code."
+msgstr "Phân đoạn thứ bảy của mã sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_6
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_6
+msgid "Sixth segment of the product code."
+msgstr "Phân đoạn thứ sáu của mã sản phẩm."
+
+#. module: a1_product
+#: model:ir.model,name:a1_product.model_product_supplierinfo
+msgid "Supplier Pricelist"
+msgstr "Bảng giá nhà cung cấp"
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_supplier_price
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_supplier_price
+msgid "Supplier price"
+msgstr "Giá NCC"
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_supplier_price
+#: model:ir.model.fields,help:a1_product.field_product_template__x_supplier_price
+msgid "Supplier suggestion's price of the product."
+msgstr "Giá đề xuất của nhà cung cấp."
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_10
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_10
+msgid "Ten segment of the product code."
+msgstr "Phân đoạn thứ mười của mã sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,help:a1_product.field_product_product__x_content_3
+#: model:ir.model.fields,help:a1_product.field_product_template__x_content_3
+msgid "Third segment of the product code."
+msgstr "Phân đoạn thứ ba của mã sản phẩm."
+
+#. module: a1_product
+#: model:ir.model.fields,field_description:a1_product.field_product_product__x_is_voucher
+#: model:ir.model.fields,field_description:a1_product.field_product_template__x_is_voucher
+msgid "Voucher"
+msgstr "Mã Voucher"

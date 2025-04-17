@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="apply_unapply_form_view_a1_inherit_purchase_return_bill_to_apply" model="ir.ui.view">
+            <field name="name">apply.unapply.form.view.inherit.a1.purchase.return.bill.to.apply</field>
+            <field name="model">apply.unapply</field>
+            <field name="inherit_id" ref="account_apply_unapply.apply_unapply_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='bill_to_apply']" position="after">
+                    <page string="In Receipt">
+                        <field name="account_move_ids" create="0">
+                            <list string="In Receipt bill to apply RBILL" editable="bottom" edit="1" create="0">
+                                <field name="x_selection" string=""/>
+                                <field name="name" width="20%" string="Transaction Number"/>
+                                <field name="invoice_date" string="Transaction Date"/>
+                                <field name="invoice_date_due" string="Due Date"/>
+                                <field name="x_description" string="Description" readonly="0"/>
+                                <field name="x_total_amount" options="{'currency_field': 'currency_id'}"
+                                       string="Original Amount" readonly="0"/>
+                                <field name="amount_residual" options="{'currency_field': 'currency_id'}"
+                                       string="Transaction Amount"/>
+                                <field name="x_apply_amount" options="{'currency_field': 'currency_id'}" readonly="0"/>
+                                <field name="x_remaining_amount" options="{'currency_field': 'currency_id'}"/>
+                                <field name="payment_state"/>
+                                <field name="currency_id" column_invisible="1"/>
+                            </list>
+                        </field>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

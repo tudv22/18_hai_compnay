@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_view_inherit" model="ir.ui.view">
+        <field name="name">a1.purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="x_type" invisible="1"/>
+            </xpath>
+            <button name="button_cancel" position="before">
+                <button string="Create Purchase Return"
+                        type="object"
+                        name="action_wizard_purchase_order_return"
+                        class="btn-primary"
+                        invisible="state != 'purchase' or x_type == 'return' or receipt_status == 'pending'"
+                />
+            </button>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_purchase_return"
+                        type="object" class="oe_stat_button"
+                        icon="fa-file"
+                        invisible="x_count_return_purchase == 0">
+                    <field name="x_count_return_purchase" widget="statinfo" string="Purchase returns"/>
+                    <field name="x_return_purchase_ids" invisible="1"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase.purchase_form_action" model="ir.actions.act_window">
+        <field name="domain">[('state', 'in', ('purchase', 'done')), ('x_type', '=', 'purchase')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('purchase.purchase_order_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('purchase.purchase_order_form')}),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('purchase.view_purchase_order_kanban')}),
+                (0, 0, {'view_mode': 'pivot', 'view_id': ref('purchase.purchase_order_pivot')}),
+                (0, 0, {'view_mode': 'graph', 'view_id': ref('purchase.purchase_order_graph')}),
+                (0, 0, {'view_mode': 'calendar', 'view_id': ref('purchase.purchase_order_calendar')}),
+            ]"/>
+    </record>
+
+    <record id="purchase.purchase_rfq" model="ir.actions.act_window">
+        <field name="domain">[('x_type', '=', 'purchase')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('purchase.purchase_order_kpis_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('purchase.purchase_order_form')}),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('purchase.view_purchase_order_kanban')}),
+                (0, 0, {'view_mode': 'pivot', 'view_id': ref('purchase.purchase_order_pivot')}),
+                (0, 0, {'view_mode': 'graph', 'view_id': ref('purchase.purchase_order_graph')}),
+                (0, 0, {'view_mode': 'calendar', 'view_id': ref('purchase.purchase_order_calendar')}),
+            ]"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_return_wizard,a1_purchase_return.purchase_return_wizard,model_purchase_return_wizard,base.group_user,1,1,1,1
+access_purchase_return_line_wizard,a1_purchase_return.purchase_return_line_wizard,model_purchase_return_line_wizard,base.group_user,1,1,1,1
+access_purchase_bill_return_wizard,a1_purchase_return.purchase_bill_return_wizard,model_purchase_bill_return_wizard,base.group_user,1,1,1,1

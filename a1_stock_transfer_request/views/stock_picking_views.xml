@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_a1_stock_transfer_request_form_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.form.transfer.request.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="x_destination_warehouse_id" invisible="not x_destination_warehouse_id"/>
+                <field name="x_origin_out_picking_from_transfer_request_id"
+                       invisible="not x_origin_out_picking_from_transfer_request_id"/>
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="x_is_hide_action_return" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+    
+    <record id="view_picking_search_inherit_stock_picking" model="ir.ui.view">
+        <field name="name">stock.picking.search.stock.picking</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <filter name="backorder" position="after">
+                <separator/>
+                <filter name="deliver_picking_of_transfer_request"
+                        string="Deliver picking of Stock Transfer Request Interal"
+                        domain="[('picking_type_code', '=', 'internal'),
+                                ('x_stock_transfer_request_id', '!=', False),
+                                ('x_stock_transfer_request_id.transfer_request_type', '=', 'internal'),
+                                ('location_dest_id.usage', '=', 'transit')]"/>
+                <filter name="receipt_picking_of_transfer_request"
+                        string="Receipt picking of Stock Transfer Request Interal"
+                        domain="[('picking_type_code', '=', 'internal'),
+                                ('x_stock_transfer_request_id', '!=', False),
+                                ('x_stock_transfer_request_id.transfer_request_type', '=', 'internal'),
+                                ('location_id.usage', '=', 'transit')]"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

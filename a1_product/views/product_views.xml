@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_import_tax_inherit" model="ir.ui.view">
+        <field name="name">product.template.import.tax.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options']" position="inside">
+                <span class="d-inline-block">
+                    <field name="x_is_voucher"/>
+                    <label for="x_is_voucher"/>
+                </span>
+            </xpath>
+            <xpath expr="//button[@name='action_open_label_layout']" position="after">
+                <button name="action_regenerate_default_code"
+                        invisible="type != 'consu'"
+                        string="Regenerate default code" type="object"/>
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="x_product_size"/>
+            </xpath>
+            <xpath expr="//field[@name='taxes_id']" position="before">
+                <field name="x_supplier_price"/>
+            </xpath>
+<!--            <xpath expr="//field[@name='uom_po_id']" position="after">-->
+<!--                <field name="x_content_1"/>-->
+<!--                <field name="x_content_2"/>-->
+<!--                <field name="x_content_3"/>-->
+<!--                <field name="x_content_4"/>-->
+<!--                <field name="x_content_5"/>-->
+<!--                <field name="x_content_6"/>-->
+<!--                <field name="x_content_7"/>-->
+<!--                <field name="x_content_8"/>-->
+<!--                <field name="x_content_9"/>-->
+<!--                <field name="x_content_10"/>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+    <record id="view_product_template_tree_view_a1_inherit" model="ir.ui.view">
+        <field name="name">product.template.tree.view.a1.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='uom_id']" position="after">
+                <field name="create_uid" optional="hide"/>
+                <field name="create_date" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_product_product_tree_view_a1_inherit" model="ir.ui.view">
+        <field name="name">product.product.tree.view.a1.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='uom_id']" position="after">
+                <field name="create_uid" optional="hide"/>
+                <field name="create_date" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_product_product_form_view_a1_inherit" model="ir.ui.view">
+        <field name="name">product.product.form.view.a1.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode'][1]" position="after">
+                <field name="x_old_code"/>
+            </xpath>
+            <xpath expr="//field[@name='barcode'][1]" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_product_template_only_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.readonly</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='barcode']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_product_easy_form_view" model="ir.ui.view">
+        <field name="name">product.product.form.easy.readonly</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="after">
+                <field name="x_old_code" readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='default_code']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='barcode']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_custom_readonly_view" model="ir.ui.view">
+        <field name="name">product.product.readonly.form</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='barcode']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_search_form_view_a1_inherit" model="ir.ui.view">
+        <field name="name">product.search.form.view.a1.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_search_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="filter_domain">
+                    ['|', '|', '|', ('default_code', 'ilike', self),('name', 'ilike', self), ('barcode', 'ilike', self)]
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_search_form_view_a1_inherit" model="ir.ui.view">
+        <field name="name">product.template.search.form.view.a1.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="filter_domain">
+                    ['|', '|', ('default_code', 'ilike', self), ('name', 'ilike', self), ('barcode', 'ilike', self)]
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

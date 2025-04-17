@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_category_form_view" model="ir.ui.view">
+        <field name="name">product.product.category.form</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='account_property']" position="after">
+                    <group name="account_payable">
+                        <group string="Account Payable Voucher">
+                            <field name="x_internal_voucher_income_id"/>
+                            <field name="x_internal_voucher_outgoing_warehouse_cost_id"/>
+                        </group>
+                    </group>
+                </xpath>
+            <field name="property_account_expense_categ_id" position="after">
+                <field name="x_property_account_return_id" options="{'no_create': True}" />
+            </field>
+            <xpath expr="//group[@name='first']" position="replace">
+                <group>
+                    <group name="first" col="2">
+                        <field name="parent_id" class="oe_inline"/>
+                    </group>
+                    <group name="second" col="2">
+                        <field name="x_attribute_config_ids">
+                            <list string="Attribute Config" editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="product_attribute_id" options="{'no_create': True}"/>
+                            </list>
+                        </field>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="a1_sale_order_return_form_inherit" model="ir.ui.view">
+        <field name="name">a1.sale.order.return.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="x_type" invisible="1"/>
+            </xpath>
+            <xpath expr="//button[@name='action_cancel']" position="after">
+                <button string="Create Sale Return"
+                        type="object"
+                        name="action_wizard_sale_order_return"
+                        class="btn-primary"
+                        invisible="state != 'sale'or delivery_status == 'pending'"
+                />
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_sale_return"
+                        type="object" class="oe_stat_button"
+                        icon="fa-file"
+                        invisible="x_count_return_sale == 0">
+                    <field name="x_count_return_sale" widget="statinfo" string="Sale returns"/>
+                    <field name="x_return_sale_ids" invisible="1"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale.action_orders" model="ir.actions.act_window">
+        <field name="domain">[('state', 'in', ('sale', 'done')), ('x_type', '=', 'sale')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('sale.view_order_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('sale.view_order_form')}),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('sale.view_sale_order_kanban')}),
+                (0, 0, {'view_mode': 'pivot', 'view_id': ref('sale.view_sale_order_pivot')}),
+                (0, 0, {'view_mode': 'graph', 'view_id': ref('sale.view_sale_order_graph')}),
+                (0, 0, {'view_mode': 'calendar', 'view_id': ref('sale.view_sale_order_calendar')}),
+            ]"/>
+    </record>
+
+    <record id="sale.action_quotations" model="ir.actions.act_window">
+        <field name="domain">[('x_type', '=', 'sale')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('sale.view_quotation_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('sale.view_order_form')}),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('sale.view_sale_order_kanban')}),
+                (0, 0, {'view_mode': 'pivot', 'view_id': ref('sale.view_sale_order_pivot')}),
+                (0, 0, {'view_mode': 'graph', 'view_id': ref('sale.view_sale_order_graph')}),
+                (0, 0, {'view_mode': 'calendar', 'view_id': ref('sale.view_sale_order_calendar')}),
+            ]"/>
+
+    </record>
+</odoo>

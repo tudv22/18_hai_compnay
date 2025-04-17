@@ -1,0 +1,48 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* a1_stock
+# 	* stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20241007\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-07 03:34+0000\n"
+"PO-Revision-Date: 2025-02-07 03:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: a1_stock_report
+#: model:ir.ui.menu,name:a1_stock_report.IO_stock_report_quantity_menu
+msgid "IO stock report quantity"
+msgstr "Báo cáo nhập xuất tồn theo kỳ"
+
+#. module: a1_stock_report
+#: model:ir.model.fields,field_description:a1_stock_report.field_in_out_stock_report__start_date
+msgid "Start date"
+msgstr "Từ ngày"
+
+#. module: a1_stock_report
+#: model:ir.model.fields,field_description:a1_stock_report.field_in_out_stock_report__end_date
+msgid "End date"
+msgstr "Đến ngày"
+
+#. module: a1_stock_report
+#: model:ir.model.fields,field_description:a1_stock_report.field_stock_warehouse__x_old_code
+msgid "Old Code"
+msgstr "Mã cũ"
+
+#. module: stock_report
+#: model:res.groups,name:stock.group_production_lot
+msgid "Manage Lots / Serial Numbers"
+msgstr "Quản lý số lô và sê-ri"
+
+
+#. module: a1_stock_report_report
+#: model:ir.actions.act_window,name:a1_stock_report.IO_stock_report_quantity_act
+msgid "report_quantity_action"
+msgstr "Báo cáo nhập xuất tồn theo kỳ"

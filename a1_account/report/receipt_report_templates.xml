@@ -1,0 +1,224 @@
+<odoo>
+    <data>
+        <record id="a1_report_receipt_format" model="report.paperformat">
+            <field name="name">A4 receipt report</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="dpi">96</field>
+        </record>
+        <record id="action_a1_report_receipt" model="ir.actions.report">
+            <field name="name">Receipt Report</field>
+            <field name="model">account.payment</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">a1_account.a1_receipt_report</field>
+            <field name="report_file">a1_account.a1_receipt_report</field>
+            <field name="print_report_name">'Receipt Report - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="account.model_account_payment"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="a1_report_receipt_format"/>
+        </record>
+
+        <template id="a1_receipt_report">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    </head>
+                    <style>
+                        .font13 {
+                        font-size: 13px;
+                        }
+                        .x_bold {
+                        font-weight: bold;
+                        }
+                        .x_center {
+                        text-align: center;
+                        }
+                        .x_right {
+                        text-align: right;
+                        }
+                        .x_italic {
+                        font-style: italic;
+                        }
+                    </style>
+                    <body style="height: auto;">
+                        <div class="container" style="font-family: Times New Roman;">
+                            <div style="width: 100%; margin-left: 50px auto;font-family: Times New Roman; font-size: 13px;"
+                                 class="ml-4">
+                                <!-- Header -->
+                                <div style="display: table; width: 100%; margin-bottom: 20px;margin-left: 20px;">
+                                    <div style="display: table-cell; width: 60%; vertical-align: top;text-align: left;">
+                                        <p style="margin: 0;">
+                                            <span t-field="o.company_id.name"/>
+                                        </p>
+                                        <p style="margin: 0;">
+                                            <span t-field="o.company_id.street"/>
+                                        </p>
+                                    </div>
+                                    <div style="display: table-cell; width: 40%; text-align: center; vertical-align: top;">
+                                        <p style="margin: 0; font-weight: bold;">Mẫu số: 02 - TT</p>
+                                        <i style="margin: 0;">(Ban hành theo Thông tư 133/2016/TT-BTC Ngày
+                                            26/08/2016 của Bộ
+                                            Tài chính)
+                                        </i>
+                                    </div>
+                                </div>
+                                <!-- Title -->
+                                <div style="text-align: center; margin-bottom: 20px; font-family: Times New Roman; font-size:16px">
+                                    <h3 style="margin: 0;">
+                                        <b>
+                                            <t t-if="o.payment_type == 'inbound'">PHIẾU THU</t>
+                                            <t t-else="">PHIẾU CHI</t>
+                                        </b>
+                                    </h3>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p style="margin: 0;text-align: right;margin-right: 7%;">
+                                                <i style="font-size: 13px;">
+                                                    <b>
+                                                        <t t-esc="(o.date).strftime('Ngày %d tháng %m năm %Y')"/>
+                                                    </b>
+                                                </i>
+                                            </p>
+                                        </div>
+                                        <div class="col-4" style="text-align: left;">
+                                            <p style="margin: 0;">Quyển số:...............</p>
+                                            <p style="margin: 0;">Số:
+                                                <span t-field="o.name"/>
+                                            </p>
+                                            <t t-if="o.payment_type == 'inbound'">
+                                                <p style="margin: 0;">Nợ:
+                                                    <span t-field="o.journal_id.default_account_id.code"/>
+                                                </p>
+                                                <p style="margin: 0;">Có:
+                                                    <t t-if="o.partner_id">
+                                                        <span t-field="o.partner_id.property_account_receivable_id.code"/>
+                                                    </t>
+                                                    <t t-if="not o.partner_id">
+                                                        <span t-field="o.journal_id.suspense_account_id.code"/>
+                                                    </t>
+                                                </p>
+                                            </t>
+                                            <t t-else="">
+                                                <p style="margin: 0;">Nợ:
+                                                    <t t-if="o.partner_id">
+                                                        <span t-field="o.partner_id.property_account_receivable_id.code"/>
+                                                    </t>
+                                                    <t t-if="not o.partner_id">
+                                                        <span t-field="o.journal_id.suspense_account_id.code"/>
+                                                    </t>
+                                                </p>
+                                                <p style="margin: 0;">Có:
+                                                    <span t-field="o.journal_id.default_account_id.code"/>
+                                                </p>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="content-info" style="font-size:15px;margin-left: 20px">
+                                <p>
+                                    <t t-if="o.payment_type == 'inbound'">Họ tên người nộp tiền:</t>
+                                    <t t-else="">Họ tên người nhận tiền:</t>
+                                    <span t-field="o.partner_id.name"/>
+                                </p>
+                                <p>Địa chỉ:
+                                    <span t-field="o.partner_id.contact_address"/>
+                                </p>
+                                <p>Lý do nộp:
+                                    <span t-field="o.ref"/>
+                                </p>
+                                <p>Số tiền:
+                                    <strong>
+                                        <span t-field="o.amount"/>
+                                    </strong>
+                                </p>
+                                <p>Viết bằng chữ:
+                                    <b>
+                                        <i>
+                                            <t t-esc="o.amount_to_text(o.amount)"/>
+                                        </i>
+                                    </b>
+                                </p>
+                                <p>Kèm theo:
+                                    <t t-esc="o.invoice_origin if o.invoice_origin else '.........'"/>
+                                    chứng từ gốc
+                                </p>
+                            </div>
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <i style="font-size: 13px; margin-left:-50px">
+                                            Ngày ... tháng ... năm ......
+                                        </i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="x_center">
+                                        <div class="font13 x_bold">Giám đốc</div>
+                                        <div class="x_italic">(Ký, họ tên, đóng dấu)</div>
+                                    </td>
+                                    <td class="x_center">
+                                        <div class="font13 x_bold">Kế toán trưởng</div>
+                                        <div class="x_italic">(Ký, họ tên)</div>
+                                    </td>
+                                    <td class="x_center">
+                                        <t t-if="o.payment_type == 'inbound'">
+                                            <div class="font13 x_bold">
+                                                Người nộp tiền
+                                            </div>
+                                        </t>
+                                        <t t-else="">
+                                            <div class="font13 x_bold">
+                                                Thủ quỹ
+                                            </div>
+                                        </t>
+                                        <div class="x_italic">(Ký, họ tên)</div>
+                                    </td>
+                                    <td class="x_center">
+                                        <div class="font13 x_bold">Người lập phiếu</div>
+                                        <div class="x_italic">(Ký, họ tên)</div>
+                                    </td>
+                                    <td class="x_center">
+                                        <t t-if="o.payment_type == 'inbound'">
+                                            <div class="font13 x_bold">
+                                                Thủ quỹ
+                                            </div>
+                                        </t>
+                                        <t t-else="">
+                                            <div class="font13 x_bold">
+                                                Người nhận tiền
+                                            </div>
+                                        </t>
+                                        <div class="x_italic">(Ký, họ tên)</div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="content-info" style="font-size:15px; padding-top:100px;margin-left: 20px">
+                                <p>Đã nhận đủ số tiền (viết bằng chữ):
+                                    <i>
+                                        <t t-esc="o.amount_to_text(o.amount)"/>
+                                    </i>
+                                </p>
+                            </div>
+                        </div>
+                    </body>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

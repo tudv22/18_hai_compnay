@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- product.category -->
+        <record id="product_category_tax_payment_substitute" model="product.category">
+            <field name="name">Danh mục thuế nộp thay</field>
+        </record>
+        <!-- product.product -->
+        <record id="product_tax_payment_substitute_tax" model="product.template">
+            <field name="name">Thuế nộp thay</field>
+            <field name="default_code">TNH</field>
+            <field name="barcode">TNH</field>
+            <field name="type">service</field>
+            <field name="categ_id" ref="a1_account.product_category_tax_payment_substitute"/>
+        </record>
+    </data>
+</odoo>

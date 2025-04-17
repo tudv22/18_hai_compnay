@@ -1,0 +1,61 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* a1_stock_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-18 04:02+0000\n"
+"PO-Revision-Date: 2025-03-18 04:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: a1_stock_account
+#: model:ir.model.fields,field_description:a1_stock_account.field_stock_picking__x_account_move_count
+msgid "Account move count"
+msgstr ""
+
+#. module: a1_stock_account
+#: model:ir.model.fields,field_description:a1_stock_account.field_stock_picking__x_currency_id
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. module: a1_stock_account
+#: model:ir.model.fields,field_description:a1_stock_account.field_stock_picking__x_exchange_rate
+msgid "Exchange Rate"
+msgstr "Tỷ giá"
+
+#. module: a1_stock_account
+#: model_terms:ir.ui.view,arch_db:a1_stock_account.stock_valuation_layer_picking_inherit
+msgid "Journal Entries"
+msgstr ""
+
+#. module: a1_stock_account
+#: model:ir.model,name:a1_stock_account.model_product_category
+msgid "Product Category"
+msgstr "Danh mục sản phẩm"
+
+#. module: a1_stock_account
+#: model:ir.model,name:a1_stock_account.model_product_product
+msgid "Product Variant"
+msgstr "Biến thể sản phẩm"
+
+#. module: a1_stock_account
+#: model:ir.model,name:a1_stock_account.model_stock_move
+msgid "Stock Move"
+msgstr "Điều chuyển tồn kho"
+
+#. module: a1_stock_account
+#: model:ir.model,name:a1_stock_account.model_stock_valuation_layer
+msgid "Stock Valuation Layer"
+msgstr "Lớp định giá tồn kho"
+
+#. module: a1_stock_account
+#: model:ir.model,name:a1_stock_account.model_stock_picking
+msgid "Transfer"
+msgstr "Lệnh chuyển hàng"

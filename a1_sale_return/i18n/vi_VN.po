@@ -1,0 +1,556 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* a1_sale_return
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20241001\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-26 03:17+0000\n"
+"PO-Revision-Date: 2024-12-26 03:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "<span class=\"o_form_label\">Sale Order Return</span>"
+msgstr "Đơn trả hàng bán"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Billed Quantity"
+msgstr "Số lượng đã thanh toán"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_return_wizard_form_view
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: a1_sale_return
+#: model:ir.model.fields.selection,name:a1_sale_return.selection__sale_order__x_return_state__cancel
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: a1_sale_return
+#. odoo-python
+#: code:addons/a1_sale_return/models/sale_order.py:0
+#, python-format
+msgid "Cannot choose both SO and SOR"
+msgstr "Không thể chọn cả SO và SOR"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_order_return_form_inherit
+msgid "Create Sale Return"
+msgstr "Tạo đơn trả hàng"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_tree_inherit_a1_sale_return
+msgid "Create date"
+msgstr "Ngày tạo"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Create invoice"
+msgstr "Tạo hóa đơn"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__create_uid
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__create_date
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__create_date
+msgid "Created on"
+msgstr "Được tạo vào"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__partner_id
+#: model:ir.model.fields,field_description:a1_sale_return.field_stock_return_picking__x_partner_id
+msgid "Customer"
+msgstr "Khách hàng"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Customer received quantity"
+msgstr "Số lượng khách hàng đã nhận được"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Define your terms and conditions ..."
+msgstr "Xác định các điều khoản và điều kiện của bạn ..."
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__delivered_qty
+msgid "Delivered Quantity"
+msgstr "Số lượng đã giao"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Delivery"
+msgstr "Phiếu nhận hàng"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_tree_inherit_a1_sale_return
+msgid "Delivery Status"
+msgstr "Trạng thái giao hàng"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Disc.%"
+msgstr "% Giảm giá"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Discount:"
+msgstr "Giảm giá:"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__display_name
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: a1_sale_return
+#: model:ir.model.fields.selection,name:a1_sale_return.selection__sale_order__x_return_state__draft
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_return_view_search_inherit_sale
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_stock_return_picking__x_has_sale_order
+msgid "Has SO"
+msgstr "Có đơn đặt hàng"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__id
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Invoices and Incoming Shipments"
+msgstr "Hóa đơn và Lô hàng đến"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__write_uid
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Được cập nhật cuối cùng bởi"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__write_date
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__write_date
+msgid "Last Updated on"
+msgstr "Được cập nhật cuối cùng vào"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__return_line_ids
+msgid "Lines"
+msgstr "Chi tiết"
+
+#. module: a1_sale_return
+#: model:ir.model.fields.selection,name:a1_sale_return.selection__sale_order__x_return_state__done
+msgid "Locked"
+msgstr "Đã khóa"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Name, TIN, Email, or Reference"
+msgstr "Tên, Mã số thuế, Email, hoặc Tham chiếu"
+
+#. module: a1_sale_return
+#. odoo-python
+#: code:addons/a1_sale_return/models/sale_order.py:0
+#, python-format
+msgid "No incoming picking type found."
+msgstr "Không tìm thấy lệnh nhận hàng"
+
+#. module: a1_sale_return
+#: model_terms:ir.actions.act_window,help:a1_sale_return.a1_sale_return_form_action
+msgid "No sale return order found. Let's create one!"
+msgstr "Không tìm thấy đơn trả hàng. Hãy tạo một!"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order__x_order_code
+msgid "Order Code"
+msgstr "Mã đơn hàng"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order__x_origin_picking_id
+msgid "Origin Picking"
+msgstr "Lệnh chuyển hàng gốc"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order_line__x_origin_sale_line_id
+msgid "Origin Sale Order Line"
+msgstr "Dòng đơn hàng bán gốc"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order__x_origin_sale_id
+msgid "Origin sale Order"
+msgstr "Đơn hàng bán gốc"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__origin_picking_id
+msgid "Picking"
+msgstr "Lệnh chuyển hàng"
+
+#. module: a1_sale_return
+#. odoo-python
+#: code:addons/a1_sale_return/wizard/sale_return_wizard.py:0
+#, python-format
+msgid "Please enter quantity to return."
+msgstr "Vui lòng nhập số lượng trả lại"
+
+#. module: a1_sale_return
+#. odoo-python
+#: code:addons/a1_sale_return/wizard/sale_return_wizard.py:0
+#: code:addons/a1_sale_return/wizard/stock_return_picking.py:0
+#, python-format
+msgid "Please select at least one line to return."
+msgstr "Vui lòng chọn ít nhất một dòng để trả lại"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__product_id
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__return_qty
+msgid "Quantity"
+msgstr "Số lượng"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Quantity:"
+msgstr "Số lượng:"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_tree_inherit_a1_sale_return
+msgid "Reference"
+msgstr "Tham chiếu"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__remaining_qty
+msgid "Remaining Quantity"
+msgstr "Số lượng còn lại"
+
+#. module: a1_sale_return
+#: model:ir.model.fields.selection,name:a1_sale_return.selection__sale_order__x_type__return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_return_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_stock_return_picking_form_view_inherit
+msgid "Return"
+msgstr "Trả lại"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order_line__x_sale_returned_line_ids
+msgid "Return Lines"
+msgstr "Chi tiết trả lại"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order__x_location_id
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__location_id
+msgid "Return Location"
+msgstr "Địa điểm trả lại"
+
+#. module: a1_sale_return
+#: model:ir.model,name:a1_sale_return.model_stock_return_picking
+msgid "Return Picking"
+msgstr "Phiếu lấy hàng trả lại"
+
+#. module: a1_sale_return
+#: model:ir.model,name:a1_sale_return.model_stock_return_picking_line
+msgid "Return Picking Line"
+msgstr "Dòng phiếu trả hàng"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:sale.field_sale_order__commitment_date
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid "Delivery Date"
+msgstr "Ngày trả hàng"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Return date"
+msgstr "Ngày đặt hàng"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order__x_return_sale_ids
+#: model:ir.model.fields,field_description:a1_sale_return.field_stock_picking__x_return_sale_order_return_ids
+msgid "Return sales"
+msgstr "Trả lại đơn bán hàng"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order__x_picking_type_id
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__picking_type_id
+msgid "Return to"
+msgstr "Địa điểm trả"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order_line__x_returned_qty
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__returned_qty
+msgid "Returned Quantity"
+msgstr " Số lượng đã trả"
+
+#. module: a1_sale_return
+#. odoo-python
+#: code:addons/a1_sale_return/wizard/sale_return_wizard.py:0
+#: code:addons/a1_sale_return/wizard/stock_return_picking.py:0
+#, python-format
+msgid "Returned sale"
+msgstr "Đã trả hàng"
+
+#. module: a1_sale_return
+#: model:ir.model.fields.selection,name:a1_sale_return.selection__sale_order__x_type__sale
+msgid "Sale"
+msgstr "Bán"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__sale_line_id
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Sale Order Line"
+msgstr "Dòng đơn hàng bán"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Sale Order Lines"
+msgstr "Chi tiết đơn trả hàng"
+
+#. module: a1_sale_return
+#: model:ir.model.fields.selection,name:a1_sale_return.selection__sale_order__x_return_state__sale
+msgid "Sale Order Return"
+msgstr "Đơn trả hàng"
+
+#. module: a1_sale_return
+#. odoo-python
+#: code:addons/a1_sale_return/models/sale_order.py:0
+#: code:addons/a1_sale_return/models/stock_picking.py:0
+#, python-format
+msgid "Sale Return"
+msgstr "Đơn trả hàng"
+
+#. module: a1_sale_return
+#: model:ir.actions.act_window,name:a1_sale_return.a1_sale_return_form_action
+#: model:ir.ui.menu,name:a1_sale_return.menu_a1_sale_return_form_action
+msgid "Sale Return Orders"
+msgstr "Đơn trả hàng"
+
+#. module: a1_sale_return
+#. odoo-python
+#: code:addons/a1_sale_return/models/sale_order.py:0
+#: model:ir.actions.act_window,name:a1_sale_return.action_wizard_sale_order_return
+#: model:ir.model,name:a1_sale_return.model_sale_return_wizard
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__wizard_id
+#, python-format
+msgid "Sale Return Wizard"
+msgstr "Trả lại hàng"
+
+#. module: a1_sale_return
+#: model:ir.model,name:a1_sale_return.model_sale_return_line_wizard
+msgid "Sale Return Wizard Line"
+msgstr "Chi tiết trả lại hàng"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_order_return_form_inherit
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_stock_picking_form_view_inherit
+msgid "Sale returns"
+msgstr "Trả hàng"
+
+#. module: a1_sale_return
+#: model:ir.model,name:a1_sale_return.model_sale_order
+msgid "Sales Order"
+msgstr "Đơn bán hàng"
+
+#. module: a1_sale_return
+#: model:ir.model,name:a1_sale_return.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Dòng đơn bán hàng"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Section Name (eg. Products, Services)"
+msgstr "Tên mục (ví dụ: Sản phẩm, Dịch vụ)"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_return_wizard_form_view
+msgid "Select all"
+msgstr "Chọn tất cả"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__is_selected
+msgid "Selected"
+msgstr "Đã chọn"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__selected_all
+msgid "Selected all"
+msgstr "Chọn tất cả"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Set to Draft"
+msgstr "Đặt lại ở dạng nháp"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order__x_return_state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: a1_sale_return
+#: model:ir.model,name:a1_sale_return.model_stock_move
+msgid "Stock Move"
+msgstr "Dịch chuyển tồn kho"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_return_wizard_form_view
+msgid "Sum delivered qty"
+msgstr "Tổng số lượng đã giao"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_return_wizard_form_view
+msgid "Sum remaining qty"
+msgstr "Tổng số lượng còn lại"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_return_wizard_form_view
+msgid "Sum return qty"
+msgstr "Tổng số lượng trả lại"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_return_wizard_form_view
+msgid "Sum returned qty"
+msgstr "Tổng số lượng đã trả lại"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Tax excl."
+msgstr "Không bao gồm thuế"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Tax excl.:"
+msgstr "Không bao gồm thuế:"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Tax incl."
+msgstr "Bao gồm thuế"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Tax incl.:"
+msgstr "Bao gồm thuế"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,help:a1_sale_return.field_sale_order__x_order_code
+msgid "The Information field used to refer to order code on Shopee,..."
+msgstr ""
+"Trường thông tin dùng để tham chiếu tới mã đơn hàng trên Shopee,..."
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_tree_inherit_a1_sale_return
+msgid "Total Untaxed amount"
+msgstr "Tổng số tiền không bao gồm thuế"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_tree_inherit_a1_sale_return
+msgid "Total amount"
+msgstr "Tổng số tiền"
+
+#. module: a1_sale_return
+#: model:ir.model,name:a1_sale_return.model_stock_picking
+msgid "Transfer"
+msgstr "Lệnh chuyển hàng"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order__x_type
+msgid "Type"
+msgstr "Loại"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Unit Price:"
+msgstr "Đơn giá:"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_line_wizard__uom_id
+msgid "Unit of Measure"
+msgstr "Đơn vị đo lường"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_tree_inherit_a1_sale_return
+msgid "Untaxed"
+msgstr "Không bao gồm thuế"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "UoM"
+msgstr "Đơn vị"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Invoices"
+msgstr "Hóa đơn"
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_order__x_count_return_sale
+msgid "X Count Return Sale"
+msgstr ""
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_stock_picking__x_count_sale_order_return
+msgid "X Count Sale Order Return"
+msgstr ""
+
+#. module: a1_sale_return
+#: model:ir.model.fields,field_description:a1_sale_return.field_sale_return_wizard__sale_id
+msgid "sale Order"
+msgstr "Đơn hàng bán"
+
+#. module: a1_sale_return
+#. odoo-python
+#: code:addons/a1_sale_return/models/product.py:0
+#, python-format
+msgid "The Refund Account is empty. Please configure it before proceeding."
+msgstr "Mục Tài khoản hoàn tiền đang trống, hãy thêm giá trị trước khi tiếp tục."
+
+#. module: a1_sale_return
+#. odoo-python
+#: code:addons/a1_sale_return/models/sale_order.py:0
+#, python-format
+msgid "Existing the following products not in the original purchase order: %s"
+msgstr "Tồn tại một số sản phẩm không thuộc đơn hàng gốc: %s"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_tree_inherit_a1_sale_return
+msgid "Create Invoices"
+msgstr "Tạo hóa đơn"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_return_view_search_inherit_sale
+msgid "Sale return"
+msgstr "Đơn trả hàng"

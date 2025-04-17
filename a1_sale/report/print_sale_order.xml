@@ -1,0 +1,291 @@
+<odoo>
+    <data>
+        <record id="report_paperformat" model="report.paperformat">
+            <field name="name">A4 stock report</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="dpi">96</field>
+        </record>
+
+        <record id="action_print_sale_order" model="ir.actions.report">
+            <field name="name">Print Sale Order</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">a1_sale.print_product_detail_template</field>
+            <field name="report_file">a1_sale.print_product_detail_template</field>
+            <field name="binding_model_id" ref="model_sale_order"/>
+            <field name="print_report_name">'Sale order - %s' % (object.name).replace('/', '')</field>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="report_paperformat"/>
+        </record>
+
+        <template id="print_sale_order_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <style>
+                        .page {
+                            padding: 30px;
+                            font-family: Times New Roman;
+                            font-size: 14px;
+                            page-break-before: always;
+                        }
+                        table {
+                            padding-top: 5px;
+                            border: 1px solid black;
+                            border-collapse: collapse;
+                        }
+                        td {
+                            vertical-align: middle;
+                            border: 1px solid black; /* Add border for each cell */
+                            padding: 5px; /* Add padding to make cells more readable *
+                        }
+                        th {
+                            font-weight: bold;
+                            border: 1px solid black; /* Add border for header cells */
+                            padding: 5px;
+                        }
+                        .x_title {
+                            font-size: 24px;
+                        }
+                        .font13 {
+                            font-size: 13px;
+                        }
+                        .x_bold {
+                            font-weight: bold;
+                        }
+                        .x_center {
+                            text-align: center;
+                        }
+                        .x_right {
+                            text-align: right;
+                        }
+                        .x_italic {
+                            font-style: italic;
+                        }
+                        .underline {
+                            border-bottom: 0.5px solid #000;
+                            width: 200px;
+                            margin-top: 5px;
+                        }
+                        .company-logo img {
+                            width: 50px;
+                            height: auto;
+                        }
+                        </style>
+                        <div>
+                            <div class="row col-8">
+                                <div class=" col-2 company-logo">
+                                    <t t-if="user.company_id.logo">
+                                        <img t-att-src="'data:image/png;base64,' + user.company_id.logo.decode('utf-8')"/>
+                                    </t>
+                                </div>
+                                <div class="col-3">
+                                    <h6 style="white-space: nowrap;"><t t-esc="user.company_id.name.upper()"/></h6>
+                                    <p style="white-space: nowrap;">
+                                        <t t-esc="user.company_id.street"/>,
+                                        <t t-esc="user.company_id.city"/>
+                                    </p>
+                                </div>
+                            </div>
+                            <h4 class="x_center x_bold">Đơn Bán Hàng</h4>
+                            <p>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div>Tên khách hàng:
+                                            <span><t t-esc="o.partner_id.name.upper()"/></span>
+                                        </div>
+                                        <div>Công ty:
+                                            <span><t t-esc="o.x_company_name or ''"/></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div>Ngày:
+                                            <span><t t-esc="o.date_order.strftime('%d/%m/%Y')"/></span>
+                                        </div>
+                                        <div>Số:
+                                            <span><t t-esc="o.name"/></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div> Địa chỉ giao hàng:
+                                            <span> <t t-esc="o.x_shipping_address or o.partner_shipping_id.street or ''"/>,
+                                                   <t t-esc="o.partner_id.city or o.partner_shipping_id.city or ''"/>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div>Loại tiền:
+                                            <span><t t-esc="o.currency_id.name"/></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div>Mã số thuế:
+                                        <span><t t-esc="o.x_tax_code or o.partner_id.vat or ''"/></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div>Số điện thoại:
+                                            <t t-if="o.partner_id.phone or o.partner_id.mobile">
+                                                <span><t t-esc="o.x_mobile or o.partner_id.mobile or o.partner_id.phone "/></span>
+                                            </t>
+                                            <t t-else="">
+                                                ______________________
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 3px">
+                                    <div class="col-6">
+                                        <div>Diễn giải:
+                                            ________________________
+                                        </div>
+                                        <div>Fax:
+                                            ______________________
+                                        </div>
+                                    </div>
+                                </div>
+                            </p>
+                            <br/>
+                            <div>
+                                <t t-out="0"/>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div>Trạng thái giao hàng:
+                                        <span><t t-esc="o.delivery_status"/></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div>Điều khoản thanh toán:
+                                        <t t-if="o.payment_term_id.name">
+                                            <span><t t-esc="o.payment_term_id.name"/></span>
+                                        </t>
+                                        <t t-else="">
+                                            ______________________
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <div class="col-4 x_center">
+                                    <div class="font13 x_bold">Người lập</div>
+                                    <div class="x_italic">(Ký, họ tên)</div>
+                                </div>
+                                <div class="col-4 x_center">
+                                    <div class="font13 x_bold">Kế toán trưởng</div>
+                                    <div class="x_italic">(Ký, họ tên)</div>
+                                </div>
+                                <div class="col-4 x_center">
+                                    <div class="font13 x_bold">Giám đốc</div>
+                                    <div class="x_italic">(Ký, họ tên, đóng dấu)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="print_product_detail_template">
+            <t t-call="a1_sale.print_sale_order_template">
+                <t t-set="o" t-value="docs"/>
+                <table class="table" >
+                    <col style="width:5%"/>
+                    <col style="width:12%"/>
+                    <col style="width:27%"/>
+                    <col style="width:8%"/>
+                    <col style="width:10%"/>
+                    <col style="width:12%"/>
+                    <col style="width:12%"/>
+                    <col style="width:14%"/>
+                    <tbody>
+                        <tr class="x_bold x_center">
+                            <td>STT</td>
+                            <td>Mã hàng</td>
+                            <td>Diễn giải</td>
+                            <td>Đơn vị</td>
+                            <td>Số lượng</td>
+                            <td>Đơn giá</td>
+                            <td>Thuế suất GTGT</td>
+                            <td>Thành tiền</td>
+                        </tr>
+                        <t t-set="stt" t-value="1"/>
+                        <t t-foreach="o.order_line" t-as="line">
+                            <tr>
+                                <td class="x_center">
+                                    <t t-esc="stt"/>
+                                </td>
+                                 <td>
+                                    <span t-esc="line.product_id.default_code or ''"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line.name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line.product_uom.name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="'{:,.2f}'.format(line.product_uom_qty)"/>
+                                </td>
+                                <td>
+                                    <span t-esc="'{:,.2f}'.format(line.price_unit)"/>
+                                </td>
+                                <td>
+                                    <t t-foreach="line.tax_id" t-as="tax">
+                                        <span t-esc="tax.name"/><br/>
+                                    </t>
+                                </td>
+                                <td>
+                                    <span t-esc="'{:,.2f}'.format(line.price_subtotal)"/>
+                                </td>
+                            </tr>
+                            <t t-set="stt" t-value="stt + 1"/>
+                        </t>
+                        <tr>
+                            <td colspan="7" >Cộng tiền hàng:</td>
+                            <td>
+                                <span t-esc="'{:,.2f}'.format(o.amount_untaxed)"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">Tiền thuế GTGT: </td>
+                            <td colspan="1">
+                                <span t-esc="'{:,.2f}'.format(o.amount_tax)"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">Tổng tiền thanh toán:</td>
+                            <td>
+                                <span t-esc="'{:,.2f}'.format(o.amount_total)"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">Số tiền viết bằng chữ:
+                                <span class="x_bold x_italic" style="margin-left: 20px;">
+                                    <t t-esc="o.amount_total_in_words(o.amount_total, o.currency_id.name).capitalize()"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </t>
+        </template>
+    </data>
+</odoo>

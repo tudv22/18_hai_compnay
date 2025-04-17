@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_form_a1_account_inherit_view" model="ir.ui.view">
+            <field name="name">product.template.form.a1.account.inherit</field>
+            <field name="model">product.template</field>
+            <field name="priority">5</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='property_account_income_id']" position="after">
+                    <field name="x_property_tax_payment_substitute_account_id" options="{'no_create': True, 'no_edit':True}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Yêu cầu -->
+        <menuitem id="stock_request" parent="stock.menu_stock_warehouse_mgmt" name="Yêu cầu" sequence="0"/>
+    </data>
+</odoo>
