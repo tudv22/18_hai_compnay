@@ -1,0 +1,7 @@
+# Các tệp Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.idea/
