@@ -29,19 +29,16 @@ class StockMove(models.Model):
         help='The information field used to enter the available inventory quantity of the selected product is displayed directly on the order.',
         copy=False
     )
-    x_free_qty = fields.Float(
-        string="Free quantity",
-        compute='_compute_qty_free',
-        copy=False
-    )
-
-    @api.depends('product_id', 'warehouse_id')
-    def _compute_qty_free(self):
-        for move in self:
-            if move.location_id.usage == 'internal':
-                move.x_free_qty = move.product_id.with_context(warehouse=move.location_id.warehouse_id.id).free_qty
-            else:
-                move.x_free_qty = 0
+    # x_free_qty = fields.Float(
+    #     string="Free quantity",
+    #     compute='_compute_qty_free',
+    #     copy=False
+    # )
+    #
+    # @api.depends('product_id', 'warehouse_id')
+    # def _compute_qty_free(self):
+    #     for move in self:
+    #             move.x_free_qty = move.product_id.with_context(warehouse=move.location_id.warehouse_id.id).free_qty
 
     def _generate_serial_numbers_from_existed_serial(self, next_serial, next_serial_count=False, location_id=False,
                                                      start_from=0, serial_length=False):

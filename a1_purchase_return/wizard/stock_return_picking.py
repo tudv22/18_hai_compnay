@@ -20,8 +20,15 @@ class StockReturnPicking(models.TransientModel):
             else:
                 record.x_has_purchase_order = False
 
-    def action_wizard_stock_picking_return(self):
+    def action_wizard_purchase_stock_picking_return(self):
         self.ensure_one()
+        # Kiểm tra điều kiện cho từng dòng product_return_moves (lines)
+        for return_line in self.product_return_moves:
+            if return_line.quantity > return_line.move_id.quantity:
+                raise UserError(
+                    f"Số lượng trả hàng cho sản phẩm {return_line.product_id.name} không thể lớn hơn số lượng đã nhận. "
+                    f"Vui lòng kiểm tra lại.")
+
         prepare_purchase_order = self._prepare_purchase_order_wizard()
         new_purchase_order = self.env['purchase.order'].create(prepare_purchase_order)
         self.picking_id.write({

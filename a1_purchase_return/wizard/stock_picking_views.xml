@@ -10,7 +10,7 @@
             </xpath>
             <xpath expr="//button[@name='action_create_returns']" position="after">
                 <button
-                        name="action_wizard_stock_picking_return"
+                        name="action_wizard_purchase_stock_picking_return"
                         class="btn-primary"
                         invisible="not x_has_purchase_order"
                         string="Return" type="object">

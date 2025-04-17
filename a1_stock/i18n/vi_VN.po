@@ -323,11 +323,6 @@ msgid "Display Name"
 msgstr ""
 
 #. module: a1_stock
-#: model:ir.model.fields,field_description:a1_stock.field_stock_move__x_free_qty
-msgid "Free quantity"
-msgstr "Tồn kho khả dụng"
-
-#. module: a1_stock
 #: model:ir.model.fields,field_description:a1_stock.field_stock_assign_serial__x_from_serials_number
 msgid "From Serials Number"
 msgstr "Từ số"

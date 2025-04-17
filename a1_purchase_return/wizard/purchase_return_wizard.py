@@ -29,6 +29,27 @@ class PurchaseReturnWizard(models.TransientModel):
         comodel_name='stock.picking',
         string='Picking',
     )
+    total_remaining_qty = fields.Float(
+        compute='_compute_total_remaining_qty',
+    )
+    has_selected_lines = fields.Boolean(
+        string="Has Selected Lines",
+        compute="_compute_has_selected_lines",
+        store=False)
+
+    @api.depends('return_line_ids.is_selected', 'return_line_ids.remaining_qty')
+    def _compute_total_remaining_qty(self):
+        for wizard in self:
+            total_qty = 0
+            for line in wizard.return_line_ids:
+                if line.is_selected:
+                    total_qty += line.remaining_qty
+            wizard.total_remaining_qty = total_qty
+
+    @api.depends('return_line_ids.is_selected')
+    def _compute_has_selected_lines(self):
+        for wizard in self:
+            wizard.has_selected_lines = any(line.is_selected for line in wizard.return_line_ids)
 
     @api.onchange('selected_all')
     def _onchange_selected_all(self):
@@ -79,6 +100,12 @@ class PurchaseReturnWizard(models.TransientModel):
             raise UserError(_("Please select at least one line to return."))
         line_vals = []
         for return_line_id in return_line_ids:
+            if return_line_id.return_qty > return_line_id.remaining_qty:
+                raise UserError(
+                    f"Số lượng trả không thể vượt quá số lượng còn lại cho sản phẩm {return_line_id.product_id.name}.")
+            if return_line_id.return_qty <= 0:
+                raise UserError(
+                    f"Số lượng trả phải lớn hơn 0 cho sản phẩm {return_line_id.product_id.name}.")
             if return_line_id.return_qty > 0:
                 line_vals.append((0, 0, self._prepare_purchase_line_default_values(return_line_id)))
         if not line_vals:

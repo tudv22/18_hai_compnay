@@ -13,14 +13,14 @@
             <xpath expr="//list/field[@name='product_id']" position="before">
                 <field name="x_is_selected"/>
             </xpath>
+            <xpath expr="//list/field[@name='product_id']" position="after">
+                <field name="x_remaining_qty"/>
+            </xpath>
             <xpath expr="//list/field[@name='to_refund']" position="attributes">
                 <attribute name="column_invisible">1</attribute>
             </xpath>
             <xpath expr="//list/field[@name='quantity']" position="attributes">
                 <attribute name="readonly">not x_is_selected</attribute>
-            </xpath>
-            <xpath expr="//button[@name='action_create_returns']" position="before">
-                <field name="x_has_purchase_sale_order" invisible="1"/>
             </xpath>
             <xpath expr="//button[@name='action_create_returns']" position="attributes">
                 <attribute name="invisible">x_has_purchase_sale_order==True</attribute>
