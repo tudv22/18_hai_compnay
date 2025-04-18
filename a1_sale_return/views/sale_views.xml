@@ -9,7 +9,7 @@
             <xpath expr="//field[@name='name']" position="after">
                 <field name="x_type" invisible="1"/>
             </xpath>
-            <xpath expr="//button[@name='action_cancel']" position="after">
+            <xpath expr="//button[@name='action_cancel']" position="before">
                 <button string="Create Sale Return"
                         type="object"
                         name="action_wizard_sale_order_return"

@@ -9,6 +9,9 @@
                 <group>
                     <field name="x_select_all" string="Select all"/>
                 </group>
+                <div style="color: red; font-size: 15px; font-style: italic;" invisible="x_total_selected_qty != 0">
+                    Hãy chọn một sản phẩm
+                </div>
             </xpath>
             <xpath expr="//list/field[@name='product_id']" position="before">
                 <field name="x_is_selected"/>
@@ -18,6 +21,10 @@
             </xpath>
             <xpath expr="//list/field[@name='to_refund']" position="attributes">
                 <attribute name="column_invisible">1</attribute>
+            </xpath>
+            <xpath expr="//list" position="attributes">
+                <attribute name="create">0</attribute>
+                <attribute name="delete">0</attribute>
             </xpath>
             <xpath expr="//list/field[@name='quantity']" position="attributes">
                 <attribute name="readonly">not x_is_selected</attribute>

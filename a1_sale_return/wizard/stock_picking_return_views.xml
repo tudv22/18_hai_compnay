@@ -9,7 +9,7 @@
                 <button
                         name="action_wizard_sale_stock_picking_return"
                         class="btn-primary"
-                        invisible="not x_has_sale_order"
+                        invisible="not x_has_sale_order or x_total_selected_qty == 0"
                         string="Return" type="object">
                     <field name="x_has_sale_order" invisible="1"/>
                 </button>

@@ -13,6 +13,20 @@ class StockReturnPicking(models.TransientModel):
         string='Has PO/SO',
         compute='_compute_x_has_purchase_sale_order',
     )
+    x_total_selected_qty = fields.Float(
+        compute='_compute_x_total_selected_qty',
+        store=True
+    )
+
+    @api.depends('product_return_moves.x_is_selected', 'product_return_moves.x_remaining_qty')
+    def _compute_x_total_selected_qty(self):
+        for record in self:
+            total_qty = 0
+            # Tính tổng số lượng cho các dòng được chọn
+            for line in record.product_return_moves:
+                if line.x_is_selected:
+                    total_qty += line.x_remaining_qty
+            record.x_total_selected_qty = total_qty
 
     @api.depends('picking_id.purchase_id', 'picking_id.sale_id')
     def _compute_x_has_purchase_sale_order(self):

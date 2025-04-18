@@ -14,8 +14,6 @@
                             data-hotkey="q"/>
                     <button name="action_draft" invisible="state != 'cancel'" string="Set to Draft" type="object"
                             data-hotkey="o"/>
-                    <button name="action_cancel" invisible="state not in ('draft', 'sale')"
-                            string="Cancel" type="object" data-hotkey="x"/>
                     <button id="create_invoice" name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
                             type="action" class="btn-primary" context="{'default_advance_payment_method': 'percentage'}" data-hotkey="q"
                             invisible="invoice_status != 'to invoice'"/>
@@ -24,6 +22,8 @@
                             invisible="invoice_status != 'no' or state != 'sale'"/>
                     <button class="oe_highlight" invisible="state != 'sale'" name="action_preview_print_sor"
                             string="Print report" type="object"/>
+                    <button name="action_cancel" invisible="state not in ('draft', 'sale')"
+                            string="Cancel" type="object" data-hotkey="x"/>
                     <field name="x_return_state" widget="statusbar" statusbar_visible="draft,to_approve,sale"
                            readonly="1"/>
                     <field name="state" invisible="1"/>

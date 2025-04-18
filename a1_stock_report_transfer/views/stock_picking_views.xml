@@ -8,7 +8,10 @@
             <field eval="12" name="priority"/>
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='do_print_picking']" position="after">
-                    <button name="anna_print_stock_picking" type="object" string="Print" invisible="picking_type_code == 'internal'"/>
+                    <button name="anna_print_stock_picking"
+                            type="object"
+                            string="Print"
+                            invisible="picking_type_code == 'internal' or state == 'draft'"/>
                 </xpath>
                 <xpath expr="//button[@name='do_print_picking']" position="attributes">
                     <attribute name="invisible">1</attribute>

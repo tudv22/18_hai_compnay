@@ -27,8 +27,11 @@
             <field name="priority" eval="1000"/>
             <field name="arch" type="xml">
                 <xpath expr="//header/button[@name='action_preview_sale_order']" position="replace">
-                     <button class="oe_highlight" invisible="state != 'sale'" name="action_preview_print_so"
+                    <button class="oe_highlight" invisible="state != 'sale'" name="action_preview_print_so"
                             string="Print report" type="object"/>
+                </xpath>
+                <xpath expr="//header/button[@name='action_quotation_send'][4]" position="attributes">
+                    <attribute name="invisible">1</attribute>
                 </xpath>
                 <xpath expr="//div[hasclass('o_td_label')][1]" position="before">
                     <field name="user_id" options="{'no_create': True, 'no_edit':True}" readonly="state != 'draft'"/>
