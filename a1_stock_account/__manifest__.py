@@ -4,6 +4,7 @@
     "category": "A1 stock account",
     "version": "1.0",
     'license': 'LGPL-3',
+    'author': 'Dương Tú',
     "depends": [
         'stock_account',
         'a1_account',

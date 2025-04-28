@@ -7,6 +7,15 @@
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="priority" eval="20"/>
             <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='order_line']" position="before">
+                    <div style="height:50px">
+                        <button string="THÊM NHIỀU SẢN PHẨM"
+                                name="purchase_order_select_product"
+                                type="object"
+                                class="oe_highlight"
+                                invisible ="state != 'draft'"/>
+                    </div>
+                </xpath>
                 <xpath expr="//sheet/group/group[2]" position="inside">
                     <field name="user_id" readonly="1"/>
                     <field name="x_department_id" readonly="1"/>

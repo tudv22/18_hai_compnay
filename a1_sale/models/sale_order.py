@@ -89,6 +89,8 @@ class SaleOrder(models.Model):
         compute='_compute_x_payment_status',
         store=True
     )
+    x_product_ids = fields.Many2many('product.product', string="Select Product", required=True)
+
     @api.depends('order_line.invoice_lines', 'x_adjust_invoice_ids')
     def _get_invoiced(self):
         res = super(SaleOrder, self)._get_invoiced()
@@ -297,4 +299,18 @@ class SaleOrder(models.Model):
         number = int(number)
         amount_in_words = amount_to_vietnamese_text(number, currency)
         return amount_in_words
+
+    def sale_order_select_product(self):
+        wizard = self.env['sale.order.wizard'].create({
+        'product_ids': self.x_product_ids.name  })
+
+        return {
+            'name': _('Select Product'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'sale.order.wizard',
+            'view_mode': 'form',
+            'res_id': wizard.id,
+            'target': 'new',
+            'context': {'default_active_id': self.id},
+        }
 

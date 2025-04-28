@@ -16,6 +16,7 @@ class StockPicking(models.Model):
         string='Warehouse',
         related='picking_type_id.warehouse_id',
     )
+    x_product_ids = fields.Many2many('product.product', string="Select Product", required=True)
 
     @api.onchange('x_warehouse_internal_id')
     def _internal_set_picking_type_id(self):
@@ -70,3 +71,17 @@ class StockPicking(models.Model):
             return True
         else:
             return super(StockPicking, self).write(vals)
+
+    def stock_picking_select_product(self):
+        wizard = self.env['stock.picking.wizard'].create({
+            'product_ids': self.x_product_ids.name})
+
+        return {
+            'name': _('Select Product'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'stock.picking.wizard',
+            'view_mode': 'form',
+            'res_id': wizard.id,
+            'target': 'new',
+            'context': {'default_active_id': self.id},
+        }

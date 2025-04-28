@@ -26,6 +26,15 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="priority" eval="1000"/>
             <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='order_line']" position="before">
+                    <div style="height:50px">
+                        <button string="THÊM NHIỀU SẢN PHẨM"
+                                name="sale_order_select_product"
+                                type="object"
+                                class="oe_highlight"
+                                invisible ="state != 'draft'"/>
+                    </div>
+                </xpath>
                 <xpath expr="//header/button[@name='action_preview_sale_order']" position="replace">
                     <button class="oe_highlight" invisible="state != 'sale'" name="action_preview_print_so"
                             string="Print report" type="object"/>

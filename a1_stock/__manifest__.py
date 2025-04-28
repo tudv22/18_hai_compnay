@@ -13,9 +13,11 @@
         'queue_job'
     ],
     "data": [
+        'security/ir.model.access.csv',
         'views/stock_picking_views.xml',
         'views/stock_reminder_views.xml',
         'views/stock_operations_menus.xml',
+        'wizard/stock_picking_wizard_view.xml'
     ],
         'installable': True,
 }

@@ -7,6 +7,15 @@
             <field name="inherit_id" ref="stock.view_picking_form"/>
              <field name="priority">1000</field>
             <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='move_ids_without_package']" position="before">
+                    <div style="height:50px">
+                        <button string="THÊM NHIỀU SẢN PHẨM"
+                                name="stock_picking_select_product"
+                                type="object"
+                                class="oe_highlight"
+                                invisible ="state != 'draft'"/>
+                    </div>
+                </xpath>
                 <xpath expr="//button[@name='action_view_reception_report']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>

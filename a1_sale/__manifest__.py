@@ -15,11 +15,13 @@
         'a1_base',
     ],
     "data": [
+        'security/ir.model.access.csv',
         'report/print_sale_order.xml',
         
         'views/sale_order_views.xml',
         'views/res_config_settings_views.xml',
         'views/account_move_views.xml',
         'views/sale_order_reminder.xml',
+        'wizard/sale_order_wizard_view.xml'
     ]
 }

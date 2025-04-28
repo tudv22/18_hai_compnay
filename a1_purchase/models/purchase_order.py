@@ -38,6 +38,7 @@ class PurchaseOrder(models.Model):
         ('purchase', 'Purchase')
     ], default='purchase', string='Type')
 
+    x_product_ids = fields.Many2many('product.product', string="Select Product", required=True)
     def action_clear_tax_lines(self):
         for line in self.order_line:
             line.taxes_id = False
@@ -130,5 +131,18 @@ class PurchaseOrder(models.Model):
         number = int(number)
         amount_in_words = amount_to_vietnamese_text(number, currency)
         return amount_in_words
+
+    def purchase_order_select_product(self):
+        wizard = self.env['purchase.order.wizard'].create({
+            'product_ids': self.x_product_ids.name})
+
+        return {
+            'name': _('Select Product'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'purchase.order.wizard',
+            'view_mode': 'form',
+            'res_id': wizard.id,
+            'target': 'new'
+        }
 
 
