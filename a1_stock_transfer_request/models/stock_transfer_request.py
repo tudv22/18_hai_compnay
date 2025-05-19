@@ -64,6 +64,7 @@ class StockTransferRequest(models.Model):
     )
     expected_date = fields.Datetime(
         string='Expected date',
+        required=True,
     )
     requester_id = fields.Many2one(
         'res.users',
@@ -116,6 +117,7 @@ class StockTransferRequest(models.Model):
     dest_warehouse_id = fields.Many2one(
         comodel_name='stock.warehouse',
         string='Dest warehouse',
+        required=True,
     )
     location_dest_id = fields.Many2one(
         'stock.location',

@@ -9,6 +9,7 @@
                     <button name="action_am_approve"
                             type="object"
                             string="Approves"
+                            groups="stock.group_stock_manager"
                             class="btn-secondary"/>
                 </header>
                 <field name="name"/>
@@ -110,13 +111,21 @@
                             name="action_am_approve"
                             class="oe_highlight"
                             type="object"
+                            groups="stock.group_stock_manager"
                             invisible="state != 'manager_approved' or x_hide_am_approve"
                     />
                     <button
                             string="Reject"
                             name="%(a1_stock_transfer_request.reject_stock_request_wizard)d"
                             type="action"
-                            invisible="state not in ['draft', 'posted', 'manager_approved']"
+                            invisible="state not in ['posted']"
+                    />
+                    <button
+                            string="Reject"
+                            name="%(a1_stock_transfer_request.reject_stock_request_wizard)d"
+                            type="action"
+                            invisible="state not in ['manager_approved']"
+                            groups="stock.group_stock_manager"
                     />
                     <button
                             string="Cancel"

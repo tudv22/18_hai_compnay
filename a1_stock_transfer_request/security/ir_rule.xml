@@ -5,4 +5,53 @@
         <field name="global" eval="True"/>
         <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
     </record>
+
+    <record id="stock_picking_rule_warehouse" model="ir.rule">
+        <field name="name">Stock Picking: own warehouse only</field>
+        <field name="model_id" ref="stock.model_stock_picking"/>
+        <field name="domain_force">[('x_warehouse_internal_id', '=', user.property_warehouse_id.id)]</field>
+    </record>
+
+    <!-- A) Nhân viên chỉ thấy record họ tạo -->
+    <record id="rule_str_user_own" model="ir.rule">
+        <field name="name">STR: User Own Records</field>
+        <field name="model_id" ref="model_stock_transfer_request"/>
+        <field name="groups" eval="[(4, ref('stock.group_stock_user'))]"/>
+        <field name="domain_force">[('create_uid','=', user.id)]</field>
+        <field name="perm_read"  eval="1"/>
+        <field name="perm_write"  eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <!-- B) Quản lý kho: read-only khi source OR dest = kho của họ -->
+    <record id="rule_str_manager_readonly" model="ir.rule">
+        <field name="name">STR: Manager Read‑Only on Related</field>
+        <field name="model_id" ref="model_stock_transfer_request"/>
+        <field name="groups" eval="[(4, ref('stock.group_stock_manager'))]"/>
+        <field name="domain_force">
+            [
+                '|',
+                ('transfer_warehouse_id','=', user.property_warehouse_id.id),
+                ('dest_warehouse_id','=', user.property_warehouse_id.id)
+            ]
+        </field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <!-- C) Quản lý kho: full CRUD khi source = kho của họ -->
+    <record id="rule_str_manager_full" model="ir.rule">
+        <field name="name">STR: Manager Full Access on Source</field>
+        <field name="model_id" ref="model_stock_transfer_request"/>
+        <field name="groups" eval="[(4, ref('stock.group_stock_manager'))]"/>
+        <field name="domain_force">[('transfer_warehouse_id','=', user.property_warehouse_id.id)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
 </odoo>

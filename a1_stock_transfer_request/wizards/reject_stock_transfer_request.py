@@ -15,13 +15,6 @@ class RejectPurchaseRequest(models.TransientModel):
                 'state': 'reject',
                 'reject_reason': self.reject_reason,
             })
-            return {
-                'name': ('purchase.request.from'),
-                'view_mode': 'form',
-                'view_id': self.env.ref('purchase_request.view_purchase_request_form').id,
-                'res_model': 'purchase.request',
-                'type': 'ir.actions.act_window',
-                'target': 'current',
-                'res_id': current_request.id,
-            }
+            return {'type': 'ir.actions.act_window_close'}
+
 
