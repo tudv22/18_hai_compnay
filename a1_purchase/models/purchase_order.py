@@ -38,8 +38,7 @@ class PurchaseOrder(models.Model):
         ('purchase', 'Purchase')
     ], default='purchase', string='Type')
 
-    x_product_ids = fields.Many2many('product.product', 'purchase_order_x_product_rel',  # ✅ Tên khác
-    'order_id', 'product_id', string="Select Product", required=True)
+    x_product_ids = fields.Many2many('product.product', string="Select Product", required=True)
     def action_clear_tax_lines(self):
         for line in self.order_line:
             line.taxes_id = False

@@ -16,7 +16,7 @@
     ],
     "data": [
         'security/ir.model.access.csv',
-
+        'security/ir_rule.xml',
         'report/print_purchase_order.xml',
         'views/purchase_views.xml',
         'views/purchase_reminder_views.xml',

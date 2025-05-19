@@ -89,8 +89,7 @@ class SaleOrder(models.Model):
         compute='_compute_x_payment_status',
         store=True
     )
-    x_product_ids = fields.Many2many('product.product', 'sale_order_x_product_rel',  # ✅ Tên khác
-    'order_id', 'product_id', string="Select Product", required=True)
+    x_product_ids = fields.Many2many('product.product', string="Select Product", required=True)
 
     @api.depends('order_line.invoice_lines', 'x_adjust_invoice_ids')
     def _get_invoiced(self):
