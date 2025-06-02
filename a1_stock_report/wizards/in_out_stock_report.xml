@@ -33,6 +33,7 @@
             <field name="type">binary</field>
             <field name="datas" type="base64" file="a1_stock_report/static/xls/in_out_stock_report_quantity.xlsx"/>
             <field name="store_fname">IO_stock_report_quantity.xlsx</field>
+            <field name="public">True</field>
         </record>
     </data>
 </odoo>
