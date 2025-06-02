@@ -23,7 +23,7 @@
                 <field name="state"
                        widget="badge"
                        decoration-muted="state=='draft'"
-                       decoration-warning="state=='posted'"
+                       decoration-warning="(state=='posted') or (state=='in_transit')"
                        decoration-primary="state=='manager_approved'"
                        decoration-info="state=='am_wh_approved'"
                        decoration-success="state=='done'"
@@ -135,7 +135,7 @@
                             confirm="Do you really want to cancel?"
                     />
                     <field name="state" widget="statusbar"
-                           statusbar_visible="draft,posted,manager_approved,am_wh_approved,done"/>
+                           statusbar_visible="draft,posted,manager_approved,am_wh_approved,in_transit,done"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">

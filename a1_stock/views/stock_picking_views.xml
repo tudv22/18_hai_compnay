@@ -30,7 +30,7 @@
                     <field name="x_warehouse_internal_id" invisible="picking_type_code!='internal'" readonly="False"/>
                 </xpath>
                 <xpath expr="//button[@name='%(stock.act_stock_return_picking)d']" position="attributes">
-                    <attribute name="invisible">state != 'done'</attribute>
+                    <attribute name="invisible">True</attribute>
                 </xpath>
                 <xpath expr="//button[@name='%(stock.action_report_delivery)d']" position="attributes">
                     <attribute name="invisible">1</attribute>
@@ -58,7 +58,7 @@
 <!--                    <field name="x_free_qty"/>-->
 <!--                </xpath>-->
                 <xpath expr="//field[@name='location_id']" position="after">
-                    <field name="user_id" options="{'no_create': True}" readonly="state != 'draft'" required="0"/>
+                    <field name="user_id" options="{'no_create': True}" readonly="state != 'draft'" required="1"/>
                     <field name="company_id" options="{'no_create': True}" readonly="state != 'draft'"/>
                 </xpath>
             </field>

@@ -554,3 +554,13 @@ msgstr "Tạo hóa đơn"
 #: model_terms:ir.ui.view,arch_db:a1_sale_return.sale_order_return_view_search_inherit_sale
 msgid "Sale return"
 msgstr "Đơn trả hàng"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Create Invoice"
+msgstr "Tạo hóa đơn"
+
+#. module: a1_sale_return
+#: model_terms:ir.ui.view,arch_db:a1_sale_return.a1_sale_return_form
+msgid "Print report"
+msgstr "In phiếu"

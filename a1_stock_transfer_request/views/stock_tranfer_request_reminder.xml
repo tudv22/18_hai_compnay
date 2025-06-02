@@ -77,6 +77,24 @@
             ]"/>
     </record>
 
+    <record id="stock_transfer_internal_request_need_transit_reminder_action" model="ir.actions.act_window">
+        <field name="name">YCĐC liên kho cần nhập</field>
+        <field name="res_model">stock.transfer.request</field>
+        <field name="view_mode">list,form,kanban,pivot,graph</field>
+        <field name="domain">[('company_id', 'in', allowed_company_ids), ('transfer_request_type', '=', 'internal'),
+            ('state', '=', 'in_transit')]
+        </field>
+        <field name="search_view_id" ref="a1_stock_transfer_request.stock_transfer_request_view_search"/>
+        <field name="context">{'default_transfer_request_type': 'internal'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('a1_stock_transfer_request.stock_transfer_request_list_reminder')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('a1_stock_transfer_request.stock_transfer_request_form_view')}),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('a1_stock_transfer_request.stock_transfer_request_kanban_reminder')}),
+                (0, 0, {'view_mode': 'pivot', 'view_id': ref('a1_stock_transfer_request.stock_transfer_request_internal_pivot')}),
+                (0, 0, {'view_mode': 'graph', 'view_id': ref('a1_stock_transfer_request.stock_transfer_request_graph')}),
+            ]"/>
+    </record>
+
     <menuitem id="menu_stock_transfer_request_reminder" name="Stock transfer request reminder"
               parent="a1_stock.menu_stock_reminder_management" sequence="20"/>
 
@@ -92,4 +110,8 @@
               name="Stock transfer interal request need AM-Warehouse approve"
               parent="menu_stock_transfer_request_reminder"
               action="stock_transfer_internal_request_need_am_wh_approve_reminder_action" sequence="15"/>
+    <menuitem id="menu_stock_transfer_internal_request_need_transit"
+              name="YCĐC liên kho cần nhập kho"
+              parent="menu_stock_transfer_request_reminder"
+              action="stock_transfer_internal_request_need_transit_reminder_action" sequence="16"/>
 </odoo>

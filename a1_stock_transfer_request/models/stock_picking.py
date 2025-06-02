@@ -118,7 +118,17 @@ class StockPicking(models.Model):
     def _check_and_update_transfer_request_state(self):
         for picking in self:
             if picking.x_stock_transfer_request_id and picking.x_stock_transfer_request_id.state != 'done':
-                picking.x_stock_transfer_request_id._check_and_update_state()
+                # picking.x_stock_transfer_request_id._check_and_update_state()
+                transfer_request = picking.x_stock_transfer_request_id.sudo()
+
+                if picking.location_dest_id.usage == 'transit' and picking.state == 'done':
+                    # Đây là picking out vừa done
+                    # Picking in sẽ được tạo trong button_validate, sau đó state sẽ là in_transit
+                    transfer_request._check_and_update_state()
+
+                elif picking.location_dest_id.usage == 'internal' and picking.state == 'done':
+                    # Đây là picking in vừa done → Hoàn thành transfer request
+                    transfer_request._check_and_update_state()
 
     # ------------------------------------------------------
     # HÀM XỬ LÝ LIÊN CÔNG TY

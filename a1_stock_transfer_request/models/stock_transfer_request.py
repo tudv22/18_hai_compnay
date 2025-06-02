@@ -9,6 +9,7 @@ STATES = [
     ('posted', 'Posted'),
     ('manager_approved', 'Manager approved'),
     ('am_wh_approved', 'AM-Warehouse approved'),
+    ('in_transit', 'Trung chuyển'),
     ('done', 'Done'),
     ('reject', 'Reject'),
     ('cancel', 'Cancel')
@@ -299,8 +300,24 @@ class StockTransferRequest(models.Model):
     # region status
     def _check_and_update_state(self):
         for record in self:
-            if record.picking_ids and all(picking.state == 'done' for picking in record.picking_ids):
+            picking_out_ids = record.picking_ids.filtered(lambda x: x.location_dest_id.usage == 'transit')
+
+            # Lấy picking in (những picking có location_dest_id.usage == 'internal')
+            picking_in_ids = record.picking_ids.filtered(lambda x: x.location_dest_id.usage == 'internal')
+
+            # Logic: picking out done → tạo picking in → picking in done → hoàn thành
+
+            # Nếu tất cả picking in đã done → Transfer request hoàn thành
+            if picking_in_ids and all(picking.state == 'done' for picking in picking_in_ids):
                 record.state = 'done'
+            # Nếu có picking out done nhưng picking in chưa done → Đang vận chuyển
+            elif (picking_out_ids and all(picking.state == 'done' for picking in picking_out_ids) and
+                  picking_in_ids and not all(picking.state == 'done' for picking in picking_in_ids)):
+                record.state = 'in_transit'
+            # Nếu picking out done nhưng chưa có picking in (đang tạo picking in)
+            elif (picking_out_ids and all(picking.state == 'done' for picking in picking_out_ids) and
+                  not picking_in_ids):
+                record.state = 'in_transit'
 
     def action_draft(self):
         for record in self:
