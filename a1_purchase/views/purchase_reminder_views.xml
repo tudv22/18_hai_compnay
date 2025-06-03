@@ -10,7 +10,7 @@
                     <field name="name"/>
                     <field name="partner_id"/>
                     <field name="date_planned"/>
-                    <field name="date_planned" string="Expected days remaining" widget="remaining_days"
+                    <field name="date_planned" string="Ngày hàng về dự kiến" widget="remaining_days"
                            decoration-primary="(date_planned >= (context_today() + datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d')) and (date_planned &lt;= (context_today() + datetime.timedelta(days=3)).strftime('%%Y-%%m-%%d'))"
                            decoration-success="(date_planned > (context_today() + datetime.timedelta(days=3)).strftime('%%Y-%%m-%%d'))"/>
                     <field name="user_id"/>
@@ -39,7 +39,7 @@
         </record>
 
         <record id="purchase_to_receipt_action" model="ir.actions.act_window">
-            <field name="name">Purchase order to receipt</field>
+            <field name="name">Phiếu mua hàng cần nhập</field>
             <field name="res_model">purchase.order</field>
             <field name="view_mode">list,kanban,form,pivot,graph,calendar,activity</field>
             <field name="domain">[('receipt_status', 'in', ('pending', 'partial')), ('x_type', '=', 'purchase'),
@@ -57,17 +57,16 @@
             <field name="context">{}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    No purchase order found. Let's create one!
+                    Không tìm thấy đơn đặt hàng. Hãy tạo một bản ghi!
                 </p>
                 <p>
-                    Once you ordered your products to your supplier, confirm your request for quotation and it will turn
-                    into a purchase order.
+                    Khi bạn đã đặt hàng sản phẩm của mình cho nhà cung cấp của mình, hãy xác nhận yêu cầu báo giá của bạn và nó sẽ biến thành đơn đặt hàng.
                 </p>
             </field>
         </record>
 
         <record id="purchase_to_approve_action" model="ir.actions.act_window">
-            <field name="name">Purchase order to approve</field>
+            <field name="name">Phiếu mua hàng cần duyệt</field>
             <field name="res_model">purchase.order</field>
             <field name="view_mode">list,kanban,form,pivot,graph,calendar,activity</field>
             <field name="domain">[('state', 'in', ('sent', 'draft')), ('x_type', '=', 'purchase')]
@@ -84,17 +83,16 @@
             <field name="context">{}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    No purchase order found. Let's create one!
+                    Không tìm thấy đơn đặt hàng. Hãy tạo một bản ghi!
                 </p>
                 <p>
-                    Once you ordered your products to your supplier, confirm your request for quotation and it will turn
-                    into a purchase order.
+                    Khi bạn đã đặt hàng sản phẩm của mình cho nhà cung cấp của mình, hãy xác nhận yêu cầu báo giá của bạn và nó sẽ biến thành đơn đặt hàng.
                 </p>
             </field>
         </record>
 
         <record id="purchase_out_date_action" model="ir.actions.act_window">
-            <field name="name">Out date</field>
+            <field name="name">Phiếu mua hàng hết hạn</field>
             <field name="res_model">purchase.order</field>
             <field name="view_mode">list,kanban,form,pivot,graph,calendar,activity</field>
             <field name="domain">[('receipt_status', 'in', ('pending', 'partial')), ('x_type', '=', 'purchase'),
@@ -112,17 +110,16 @@
             <field name="context">{}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    No purchase order found. Let's create one!
+                   Không tìm thấy đơn đặt hàng. Hãy tạo một bản ghi!
                 </p>
                 <p>
-                    Once you ordered your products to your supplier, confirm your request for quotation and it will turn
-                    into a purchase order.
+                    Khi bạn đã đặt hàng sản phẩm của mình cho nhà cung cấp của mình, hãy xác nhận yêu cầu báo giá của bạn và nó sẽ biến thành đơn đặt hàng.
                 </p>
             </field>
         </record>
 
         <record id="purchase_to_invoice_action" model="ir.actions.act_window">
-            <field name="name">To invoice</field>
+            <field name="name">Phiếu mua hàng cần xuất hóa đơn</field>
             <field name="res_model">purchase.order</field>
             <field name="view_mode">list,kanban,form,pivot,graph,calendar,activity</field>
             <field name="domain">[('invoice_status', '=', 'to invoice'), ('x_type', '=', 'purchase')]</field>
@@ -138,11 +135,10 @@
             <field name="context">{}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    No purchase order found. Let's create one!
+                    Không tìm thấy đơn đặt hàng. Hãy tạo một bản ghi!
                 </p>
                 <p>
-                    Once you ordered your products to your supplier, confirm your request for quotation and it will turn
-                    into a purchase order.
+                    Khi bạn đã đặt hàng sản phẩm của mình cho nhà cung cấp của mình, hãy xác nhận yêu cầu báo giá của bạn và nó sẽ biến thành đơn đặt hàng.
                 </p>
             </field>
         </record>
@@ -211,7 +207,7 @@
         </record>
 
         <record id="action_purchase_line_to_receipt" model="ir.actions.act_window">
-            <field name="name">Order line to receipt</field>
+            <field name="name">Phiếu mua hàng sản phẩm</field>
             <field name="res_model">purchase.order.line</field>
             <field name="view_mode">list,search,form</field>
             <field name="search_view_id" ref="a1_purchase.purchase_order_line_search_a1_inherit"/>
@@ -224,7 +220,7 @@
             <field name="context">{}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    No purchase order line were made yet!
+                    Chưa có dòng đơn đặt hàng nào được thực hiện!
                 </p>
             </field>
         </record>

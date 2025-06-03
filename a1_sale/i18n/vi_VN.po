@@ -279,3 +279,8 @@ msgstr "Đơn hàng có thể bán thêm"
 #: model:ir.ui.menu,name:a1_sale.menu_reminder_order_to_invoice
 msgid "Order to invoice"
 msgstr "Đơn hàng bán cần xuất hóa đơn"
+
+#. module: a1_sale
+#: model_terms:ir.ui.view,arch_db:a1_sale.view_order_form_a1_inherit
+msgid "Print report"
+msgstr "In phiếu"

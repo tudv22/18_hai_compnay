@@ -665,3 +665,8 @@ msgid ""
 "You cannot process both Purchase Orders (PO) and Purchase Returns (POR) "
 "together."
 msgstr "Bạn không thể xử lý cả Đơn mua hàng (PO) và Đơn trả hàng (POR) cùng một lúc"
+
+#. module: a1_purchase_return
+#: model_terms:ir.ui.view,arch_db:a1_purchase_return.a1_purchase_order_return_form
+msgid "Print report"
+msgstr "In đơn"

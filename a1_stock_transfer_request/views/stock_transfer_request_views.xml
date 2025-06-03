@@ -105,6 +105,7 @@
                             string="Print"
                             name="anna_print_stock_transfer_request"
                             type="object"
+                            invisible="state != 'done'"
                     />
                     <button
                             string="Approve"

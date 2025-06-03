@@ -10,7 +10,7 @@
                 <xpath expr="//button[@name='do_print_picking']" position="after">
                     <button name="anna_print_stock_picking"
                             type="object"
-                            string="Print"
+                            string="In phiếu"
                             invisible="picking_type_code == 'internal' or state == 'draft'"/>
                 </xpath>
                 <xpath expr="//button[@name='do_print_picking']" position="attributes">
